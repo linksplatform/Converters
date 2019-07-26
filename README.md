@@ -6,6 +6,6 @@ LinksPlatform's Platform.Converters Class Library.
 
 Namespace: Platform.Converters
 
-Forked from: https://github.com/Konard/LinksPlatform/tree/1a9a968bea64460cfbf0f075b0336bc2179e295c/Platform/Platform.Helpers
+Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers](https://github.com/Konard/LinksPlatform/tree/1a9a968bea64460cfbf0f075b0336bc2179e295c/Platform/Platform.Helpers)
 
-NuGet package: https://www.nuget.org/packages/Platform.Converters
+NuGet package: [Platform.Converters](https://www.nuget.org/packages/Platform.Converters)
