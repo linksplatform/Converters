@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Platform.Reflection;
@@ -20,7 +21,7 @@ namespace Platform.Converters
     /// </remarks>
     public static class To
     {
-        public const char UnknownCharacter = '�';
+        public static readonly char UnknownCharacter = '�';
 
         private static class SignProcessor<T>
         {
@@ -30,50 +31,34 @@ namespace Platform.Converters
 
             static SignProcessor()
             {
-                DelegateHelpers.Compile(out ToSignedFunc, emiter =>
+                ToSignedFunc = DelegateHelpers.Compile<Func<T, object>>(emiter =>
                 {
                     EnsureSupportedUnsignedType();
-
                     emiter.LoadArgument(0);
-
-                    var method = typeof(To).GetTypeInfo().GetMethod("Signed", Types<T>.Array);
-
+                    var method = typeof(To).GetTypeInfo().GetMethod("Signed", Types<T>.Array.ToArray());
                     emiter.Call(method);
-
                     emiter.Box(method.ReturnType);
-
                     emiter.Return();
                 });
 
-                DelegateHelpers.Compile(out ToUnsignedFunc, emiter =>
+                ToUnsignedFunc = DelegateHelpers.Compile<Func<T, object>>(emiter =>
                 {
                     EnsureSupportedSignedType();
-
                     emiter.LoadArgument(0);
-
-                    var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", Types<T>.Array);
-
+                    var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", Types<T>.Array.ToArray());
                     emiter.Call(method);
-
                     emiter.Box(method.ReturnType);
-
                     emiter.Return();
                 });
 
-                DelegateHelpers.Compile(out ToUnsignedAsFunc, emiter =>
+                ToUnsignedAsFunc = DelegateHelpers.Compile<Func<object, T>>(emiter =>
                 {
                     EnsureSupportedUnsignedType();
-
                     emiter.LoadArgument(0);
-
                     var signedVersion = CachedTypeInfo<T>.SignedVersion;
-
                     emiter.UnboxAny(signedVersion);
-
                     var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", new[] { signedVersion });
-
                     emiter.Call(method);
-
                     emiter.Return();
                 });
             }
@@ -82,14 +67,18 @@ namespace Platform.Converters
             {
                 var type = typeof(T);
                 if (type != typeof(ulong) && type != typeof(uint) && type != typeof(ushort) && type != typeof(byte))
+                {
                     throw new NotSupportedException();
+                }
             }
 
             private static void EnsureSupportedSignedType()
             {
                 var type = typeof(T);
                 if (type != typeof(long) && type != typeof(int) && type != typeof(short) && type != typeof(sbyte))
+                {
                     throw new NotSupportedException();
+                }
             }
         }
 
