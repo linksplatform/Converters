@@ -8,7 +8,7 @@ using Platform.Reflection.Sigil;
 
 namespace Platform.Converters
 {
-    public sealed class To<T>
+    public static class To<T>
     {
         public static readonly Func<T, object> Signed;
         public static readonly Func<T, object> Unsigned;
@@ -44,10 +44,6 @@ namespace Platform.Converters
                 emiter.Call(method);
                 emiter.Return();
             });
-        }
-
-        private To()
-        {
         }
     }
 }
