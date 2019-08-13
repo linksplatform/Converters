@@ -1,57 +1,11 @@
 ﻿using System;
-using System.Linq;
-using System.Reflection;
 using System.Runtime.CompilerServices;
-using Platform.Exceptions;
-using Platform.Reflection;
-using Platform.Reflection.Sigil;
 
 namespace Platform.Converters
 {
     public static class To
     {
         public static readonly char UnknownCharacter = '�';
-
-        private static class SignProcessor<T>
-        {
-            public static readonly Func<T, object> ToSignedFunc;
-            public static readonly Func<T, object> ToUnsignedFunc;
-            public static readonly Func<object, T> ToUnsignedAsFunc;
-
-            static SignProcessor()
-            {
-                ToSignedFunc = DelegateHelpers.Compile<Func<T, object>>(emiter =>
-                {
-                    Ensure.Always.IsUnsignedInteger<T>();
-                    emiter.LoadArgument(0);
-                    var method = typeof(To).GetTypeInfo().GetMethod("Signed", Types<T>.Array.ToArray());
-                    emiter.Call(method);
-                    emiter.Box(method.ReturnType);
-                    emiter.Return();
-                });
-
-                ToUnsignedFunc = DelegateHelpers.Compile<Func<T, object>>(emiter =>
-                {
-                    Ensure.Always.IsSignedInteger<T>();
-                    emiter.LoadArgument(0);
-                    var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", Types<T>.Array.ToArray());
-                    emiter.Call(method);
-                    emiter.Box(method.ReturnType);
-                    emiter.Return();
-                });
-
-                ToUnsignedAsFunc = DelegateHelpers.Compile<Func<object, T>>(emiter =>
-                {
-                    Ensure.Always.IsUnsignedInteger<T>();
-                    emiter.LoadArgument(0);
-                    var signedVersion = CachedTypeInfo<T>.SignedVersion;
-                    emiter.UnboxAny(signedVersion);
-                    var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", new[] { signedVersion });
-                    emiter.Call(method);
-                    emiter.Return();
-                });
-            }
-        }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong UInt64(ulong value) => value;
@@ -120,7 +74,7 @@ namespace Platform.Converters
         public static sbyte Signed(byte value) => (sbyte)value;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static object Signed<T>(T value) => SignProcessor<T>.ToSignedFunc(value);
+        public static object Signed<T>(T value) => To<T>.Signed(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong Unsigned(long value) => (ulong)value;
@@ -135,9 +89,9 @@ namespace Platform.Converters
         public static byte Unsigned(sbyte value) => (byte)value;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static object Unsigned<T>(T value) => SignProcessor<T>.ToUnsignedFunc(value);
+        public static object Unsigned<T>(T value) => To<T>.Unsigned(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T UnsignedAs<T>(object value) => SignProcessor<T>.ToUnsignedAsFunc(value);
+        public static T UnsignedAs<T>(object value) => To<T>.UnsignedAs(value);
     }
 }
