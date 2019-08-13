@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Converters Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
-    <VersionPrefix>0.0.2</VersionPrefix>
+    <VersionPrefix>0.0.3</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Platform.Converters</AssemblyName>
@@ -21,9 +21,12 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PackageReleaseNotes>Platform.Reflection dependency updated from 0.0.1 to 0.0.3.
-Platform.Reflection.Sigil dependency updated from 0.0.2 to 0.0.3.
-Issues fixes.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Reflection dependency updated from 0.0.3 to 0.0.4.
+Platform.Reflection.Sigil dependency updated from 0.0.3 to 0.0.4.
+Added To class with typed parameter.
+XML documentation file generation turned on.
+Travis CI connected.
+Refactoring, issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
