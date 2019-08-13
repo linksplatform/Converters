@@ -4,6 +4,8 @@ using Platform.Exceptions;
 using Platform.Reflection;
 using Platform.Reflection.Sigil;
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
 namespace Platform.Converters
 {
     public class To<T>
