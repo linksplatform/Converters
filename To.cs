@@ -2,22 +2,20 @@
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using Platform.Exceptions;
 using Platform.Reflection;
 using Platform.Reflection.Sigil;
 
 namespace Platform.Converters
 {
     /// <remarks>
-    /// Shorter version of ConvertationHelpers.
-    /// Укороченная версия от ConvertationHelpers.
-    /// 
     /// Возможно нужно несколько разных способов разрешения конфликта.
     /// ExceptionConflictReation (выбрасывает исключение, если обнаружен конфликт, не предпринимая никаких действий)
     /// > Max: Max (если число больше его максимального размера в этом размере, то берём максимальное)
     /// > Max: 0 (если число больше его максимального размера в этом размере, то берём обнуляем)
     /// и т.п. (например определённые пользователем)
     /// 
-    /// Текущая логика алгоритма "Closest"
+    /// Текущая логика алгоритма "Closest value"
     /// </remarks>
     public static class To
     {
@@ -33,7 +31,7 @@ namespace Platform.Converters
             {
                 ToSignedFunc = DelegateHelpers.Compile<Func<T, object>>(emiter =>
                 {
-                    EnsureSupportedUnsignedType();
+                    Ensure.Always.IsUnsignedInteger<T>();
                     emiter.LoadArgument(0);
                     var method = typeof(To).GetTypeInfo().GetMethod("Signed", Types<T>.Array.ToArray());
                     emiter.Call(method);
@@ -43,7 +41,7 @@ namespace Platform.Converters
 
                 ToUnsignedFunc = DelegateHelpers.Compile<Func<T, object>>(emiter =>
                 {
-                    EnsureSupportedSignedType();
+                    Ensure.Always.IsSignedInteger<T>();
                     emiter.LoadArgument(0);
                     var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", Types<T>.Array.ToArray());
                     emiter.Call(method);
@@ -53,7 +51,7 @@ namespace Platform.Converters
 
                 ToUnsignedAsFunc = DelegateHelpers.Compile<Func<object, T>>(emiter =>
                 {
-                    EnsureSupportedUnsignedType();
+                    Ensure.Always.IsUnsignedInteger<T>();
                     emiter.LoadArgument(0);
                     var signedVersion = CachedTypeInfo<T>.SignedVersion;
                     emiter.UnboxAny(signedVersion);
@@ -61,24 +59,6 @@ namespace Platform.Converters
                     emiter.Call(method);
                     emiter.Return();
                 });
-            }
-
-            private static void EnsureSupportedUnsignedType()
-            {
-                var type = typeof(T);
-                if (type != typeof(ulong) && type != typeof(uint) && type != typeof(ushort) && type != typeof(byte))
-                {
-                    throw new NotSupportedException();
-                }
-            }
-
-            private static void EnsureSupportedSignedType()
-            {
-                var type = typeof(T);
-                if (type != typeof(long) && type != typeof(int) && type != typeof(short) && type != typeof(sbyte))
-                {
-                    throw new NotSupportedException();
-                }
             }
         }
 
@@ -136,26 +116,37 @@ namespace Platform.Converters
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong UInt64(char value) => value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static long Signed(ulong value) => (long)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int Signed(uint value) => (int)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static short Signed(ushort value) => (short)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static sbyte Signed(byte value) => (sbyte)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object Signed<T>(T value) => SignProcessor<T>.ToSignedFunc(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong Unsigned(long value) => (ulong)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint Unsigned(int value) => (uint)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ushort Unsigned(short value) => (ushort)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static byte Unsigned(sbyte value) => (byte)value;
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object Unsigned<T>(T value) => SignProcessor<T>.ToUnsignedFunc(value);
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static T UnsignedAs<T>(object value) => SignProcessor<T>.ToUnsignedAsFunc(value);
     }
 }
