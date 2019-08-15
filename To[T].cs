@@ -38,7 +38,7 @@ namespace Platform.Converters
             {
                 Ensure.Always.IsUnsignedInteger<T>();
                 emiter.LoadArgument(0);
-                var signedVersion = CachedTypeInfo<T>.SignedVersion;
+                var signedVersion = Type<T>.SignedVersion;
                 emiter.UnboxAny(signedVersion);
                 var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", new[] { signedVersion });
                 emiter.Call(method);
