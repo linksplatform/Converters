@@ -13,49 +13,49 @@ namespace Platform.Converters
         public static ulong UInt64(ulong value) => value;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static long Int64(ulong value) => value > long.MaxValue ? long.MaxValue : (long)value;
+        public static long Int64(ulong value) => unchecked(value > long.MaxValue ? long.MaxValue : (long)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint UInt32(ulong value) => value > uint.MaxValue ? uint.MaxValue : (uint)value;
+        public static uint UInt32(ulong value) => unchecked(value > uint.MaxValue ? uint.MaxValue : (uint)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Int32(ulong value) => value > int.MaxValue ? int.MaxValue : (int)value;
+        public static int Int32(ulong value) => unchecked(value > int.MaxValue ? int.MaxValue : (int)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort UInt16(ulong value) => value > ushort.MaxValue ? ushort.MaxValue : (ushort)value;
+        public static ushort UInt16(ulong value) => unchecked(value > ushort.MaxValue ? ushort.MaxValue : (ushort)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static short Int16(ulong value) => value > (ulong)short.MaxValue ? short.MaxValue : (short)value;
+        public static short Int16(ulong value) => unchecked(value > (ulong)short.MaxValue ? short.MaxValue : (short)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte Byte(ulong value) => value > byte.MaxValue ? byte.MaxValue : (byte)value;
+        public static byte Byte(ulong value) => unchecked(value > byte.MaxValue ? byte.MaxValue : (byte)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static sbyte SByte(ulong value) => value > (ulong)sbyte.MaxValue ? sbyte.MaxValue : (sbyte)value;
+        public static sbyte SByte(ulong value) => unchecked(value > (ulong)sbyte.MaxValue ? sbyte.MaxValue : (sbyte)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool Boolean(ulong value) => value > 0;
+        public static bool Boolean(ulong value) => value > 0UL;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static char Char(ulong value) => value > char.MaxValue ? UnknownCharacter : (char)value;
+        public static char Char(ulong value) => unchecked(value > char.MaxValue ? UnknownCharacter : (char)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static DateTime DateTime(ulong value) => value > long.MaxValue ? System.DateTime.MaxValue : new DateTime((long)value);
+        public static DateTime DateTime(ulong value) => unchecked(value > long.MaxValue ? System.DateTime.MaxValue : new DateTime((long)value));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static TimeSpan TimeSpan(ulong value) => value > long.MaxValue ? System.TimeSpan.MaxValue : new TimeSpan((long)value);
+        public static TimeSpan TimeSpan(ulong value) => unchecked(value > long.MaxValue ? System.TimeSpan.MaxValue : new TimeSpan((long)value));
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ulong UInt64(long value) => value < (long)ulong.MinValue ? ulong.MinValue : (ulong)value;
+        public static ulong UInt64(long value) => unchecked(value < (long)ulong.MinValue ? ulong.MinValue : (ulong)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ulong UInt64(int value) => value < (int)ulong.MinValue ? ulong.MinValue : (ulong)value;
+        public static ulong UInt64(int value) => unchecked(value < (int)ulong.MinValue ? ulong.MinValue : (ulong)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ulong UInt64(short value) => value < (short)ulong.MinValue ? ulong.MinValue : (ulong)value;
+        public static ulong UInt64(short value) => unchecked(value < (short)ulong.MinValue ? ulong.MinValue : (ulong)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ulong UInt64(sbyte value) => value < (sbyte)ulong.MinValue ? ulong.MinValue : (ulong)value;
+        public static ulong UInt64(sbyte value) => unchecked(value < (sbyte)ulong.MinValue ? ulong.MinValue : (ulong)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static ulong UInt64(bool value) => value ? 1UL : 0UL;
@@ -64,31 +64,31 @@ namespace Platform.Converters
         public static ulong UInt64(char value) => value;
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static long Signed(ulong value) => (long)value;
+        public static long Signed(ulong value) => unchecked((long)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static int Signed(uint value) => (int)value;
+        public static int Signed(uint value) => unchecked((int)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static short Signed(ushort value) => (short)value;
+        public static short Signed(ushort value) => unchecked((short)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static sbyte Signed(byte value) => (sbyte)value;
+        public static sbyte Signed(byte value) => unchecked((sbyte)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object Signed<T>(T value) => To<T>.Signed(value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ulong Unsigned(long value) => (ulong)value;
+        public static ulong Unsigned(long value) => unchecked((ulong)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint Unsigned(int value) => (uint)value;
+        public static uint Unsigned(int value) => unchecked((uint)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static ushort Unsigned(short value) => (ushort)value;
+        public static ushort Unsigned(short value) => unchecked((ushort)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static byte Unsigned(sbyte value) => (byte)value;
+        public static byte Unsigned(sbyte value) => unchecked((byte)value);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static object Unsigned<T>(T value) => To<T>.Unsigned(value);

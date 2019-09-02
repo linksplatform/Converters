@@ -15,7 +15,14 @@ namespace Platform.Converters
 
         static To()
         {
-            Signed = DelegateHelpers.Compile<Func<T, object>>(emiter =>
+            Signed = CompileSignedDelegate();
+            Unsigned = CompileUnsignedDelegate();
+            UnsignedAs = CompileUnsignedAsDelegate();
+        }
+
+        static private Func<T, object> CompileSignedDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, object>>(emiter =>
             {
                 Ensure.Always.IsUnsignedInteger<T>();
                 emiter.LoadArgument(0);
@@ -24,7 +31,11 @@ namespace Platform.Converters
                 emiter.Box(method.ReturnType);
                 emiter.Return();
             });
-            Unsigned = DelegateHelpers.Compile<Func<T, object>>(emiter =>
+        }
+
+        static private Func<T, object> CompileUnsignedDelegate()
+        {
+            return DelegateHelpers.Compile<Func<T, object>>(emiter =>
             {
                 Ensure.Always.IsSignedInteger<T>();
                 emiter.LoadArgument(0);
@@ -33,7 +44,11 @@ namespace Platform.Converters
                 emiter.Box(method.ReturnType);
                 emiter.Return();
             });
-            UnsignedAs = DelegateHelpers.Compile<Func<object, T>>(emiter =>
+        }
+
+        static private Func<object, T> CompileUnsignedAsDelegate()
+        {
+            return DelegateHelpers.Compile<Func<object, T>>(emiter =>
             {
                 Ensure.Always.IsUnsignedInteger<T>();
                 emiter.LoadArgument(0);
