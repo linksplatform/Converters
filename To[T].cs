@@ -2,7 +2,6 @@
 using System.Reflection;
 using Platform.Exceptions;
 using Platform.Reflection;
-using Platform.Reflection.Sigil;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -38,8 +37,8 @@ namespace Platform.Converters
             {
                 Ensure.Always.IsUnsignedInteger<T>();
                 emiter.LoadArgument(0);
-                var signedVersion = Type<T>.SignedVersion;
-                emiter.UnboxAny(signedVersion);
+                var signedVersion = NumericType<T>.SignedVersion;
+                emiter.UnboxValue(signedVersion);
                 var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", new[] { signedVersion });
                 emiter.Call(method);
                 emiter.Return();
