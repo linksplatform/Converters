@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using Platform.Exceptions;
 using Platform.Reflection;
 
@@ -26,7 +25,7 @@ namespace Platform.Converters
             {
                 Ensure.Always.IsUnsignedInteger<T>();
                 emiter.LoadArgument(0);
-                var method = typeof(To).GetTypeInfo().GetMethod("Signed", Types<T>.Array);
+                var method = typeof(To).GetMethod("Signed", Types<T>.Array);
                 emiter.Call(method);
                 emiter.Box(method.ReturnType);
                 emiter.Return();
@@ -39,7 +38,7 @@ namespace Platform.Converters
             {
                 Ensure.Always.IsSignedInteger<T>();
                 emiter.LoadArgument(0);
-                var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", Types<T>.Array);
+                var method = typeof(To).GetMethod("Unsigned", Types<T>.Array);
                 emiter.Call(method);
                 emiter.Box(method.ReturnType);
                 emiter.Return();
@@ -54,7 +53,7 @@ namespace Platform.Converters
                 emiter.LoadArgument(0);
                 var signedVersion = NumericType<T>.SignedVersion;
                 emiter.UnboxValue(signedVersion);
-                var method = typeof(To).GetTypeInfo().GetMethod("Unsigned", new[] { signedVersion });
+                var method = typeof(To).GetMethod("Unsigned", new[] { signedVersion });
                 emiter.Call(method);
                 emiter.Return();
             });
