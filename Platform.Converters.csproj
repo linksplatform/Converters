@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Converters Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
-    <VersionPrefix>0.0.5</VersionPrefix>
+    <VersionPrefix>0.0.6</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
     <AssemblyName>Platform.Converters</AssemblyName>
@@ -22,10 +22,9 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>Latest</LangVersion>
-    <PackageReleaseNotes>Added support for net461 (.NET Framework 4.6.1).
-Removed Platform.Reflection.Sigil dependency.
-Platform.Reflection dependency from 0.0.6 to 0.1.0.
-Refactoring, issues fix.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Reflection dependency updated from 0.1.0 to 0.1.1.
+Travis CI build configuration updated to support automatic NuGet package publishing.
+Project file updated to support multiple build environments: dotnet, Travis CI, MonoDevelop, and Visual Studio.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
