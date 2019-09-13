@@ -4,15 +4,15 @@
     "title": "Converters | LinksPlatform's Platform.Converters Library",
     "keywords": "Converters LinksPlatform's Platform.Converters Class Library. Namespace: Platform.Converters Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Converters Documentation PDF file with code for e-readers. Depend on Platform.Reflection Dependent libraries Platform.Numbers Mystery files .travis.yml - Travis CI build configuration. docfx.json and toc.yml - DocFX build configuration. format-document.sh - script for formatting tex file for generating PDF from it. format-csharp-files.py - script for formatting .cs files as a part of tex file. generate-pdf.sh - script that generates PDF with code for e-readers. publish-docs.sh - script that publishes generated documentation and PDF with code for e-readers to gh-pages branch. push-nuget.sh - script for publishing current version of NuGet package."
   },
-  "api/Platform.Converters.html": {
-    "href": "api/Platform.Converters.html",
-    "title": "Namespace Platform.Converters | LinksPlatform's Platform.Converters Library",
-    "keywords": "Namespace Platform.Converters Classes To To<T>"
-  },
   "api/Platform.Converters.To-1.html": {
     "href": "api/Platform.Converters.To-1.html",
     "title": "Class To<T> | LinksPlatform's Platform.Converters Library",
     "keywords": "Class To<T> Inheritance Object To<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Converters Assembly : Platform.Converters.dll Syntax public static class To<T> Type Parameters Name Description T Fields | Improve this Doc View Source Signed Declaration public static readonly Func<T, object> Signed Field Value Type Description Func <T, Object > | Improve this Doc View Source Unsigned Declaration public static readonly Func<T, object> Unsigned Field Value Type Description Func <T, Object > | Improve this Doc View Source UnsignedAs Declaration public static readonly Func<object, T> UnsignedAs Field Value Type Description Func < Object , T>"
+  },
+  "api/Platform.Converters.html": {
+    "href": "api/Platform.Converters.html",
+    "title": "Namespace Platform.Converters | LinksPlatform's Platform.Converters Library",
+    "keywords": "Namespace Platform.Converters Classes To To<T>"
   },
   "api/Platform.Converters.To.html": {
     "href": "api/Platform.Converters.To.html",
