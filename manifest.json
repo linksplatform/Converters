@@ -18,7 +18,31 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "EMSJACtUlo1PF9yfydnw8w=="
+          "hash": "GbzIEi2CL6v3Vm2U2KOaWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Converters.IConverter-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Converters.IConverter-1.html",
+          "hash": "vZxd5QHiCHDY3y/oEIlJtQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Platform.Converters.IConverter-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Platform.Converters.IConverter-2.html",
+          "hash": "qKmki1ylLymNyu1TyHqkXA=="
         }
       },
       "is_incremental": false,
@@ -30,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.To-1.html",
-          "hash": "wkmeeTUve6rfEuc6LOgF4A=="
+          "hash": "X3jZF5WE0PkK6frpgX/YGQ=="
         }
       },
       "is_incremental": false,
@@ -42,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.To.html",
-          "hash": "VJcZFQywu4k8t9QBptz7kg=="
+          "hash": "59JStL/vVP1ixnq2t9bGug=="
         }
       },
       "is_incremental": false,
@@ -54,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.html",
-          "hash": "RuaMIRssEBmAARmFtc9xLQ=="
+          "hash": "1XWEpcYcl9+0t4B6J1Mrng=="
         }
       },
       "is_incremental": false,
@@ -66,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "XQzzutpHORk0P2oegBmEmQ=="
+          "hash": "P7dm8L8usujHByOHCmff2w=="
         }
       },
       "is_incremental": false,
@@ -99,16 +123,16 @@
         "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 3,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

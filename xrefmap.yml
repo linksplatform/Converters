@@ -7,6 +7,41 @@ references:
   commentId: N:Platform.Converters
   fullName: Platform.Converters
   nameWithType: Platform.Converters
+- uid: Platform.Converters.IConverter`1
+  name: IConverter<T>
+  href: api/Platform.Converters.IConverter-1.html
+  commentId: T:Platform.Converters.IConverter`1
+  name.vb: IConverter(Of T)
+  fullName: Platform.Converters.IConverter<T>
+  fullName.vb: Platform.Converters.IConverter(Of T)
+  nameWithType: IConverter<T>
+  nameWithType.vb: IConverter(Of T)
+- uid: Platform.Converters.IConverter`2
+  name: IConverter<TSource, TTarget>
+  href: api/Platform.Converters.IConverter-2.html
+  commentId: T:Platform.Converters.IConverter`2
+  name.vb: IConverter(Of TSource, TTarget)
+  fullName: Platform.Converters.IConverter<TSource, TTarget>
+  fullName.vb: Platform.Converters.IConverter(Of TSource, TTarget)
+  nameWithType: IConverter<TSource, TTarget>
+  nameWithType.vb: IConverter(Of TSource, TTarget)
+- uid: Platform.Converters.IConverter`2.Convert(`0)
+  name: Convert(TSource)
+  href: api/Platform.Converters.IConverter-2.html#Platform_Converters_IConverter_2_Convert__0_
+  commentId: M:Platform.Converters.IConverter`2.Convert(`0)
+  fullName: Platform.Converters.IConverter<TSource, TTarget>.Convert(TSource)
+  fullName.vb: Platform.Converters.IConverter(Of TSource, TTarget).Convert(TSource)
+  nameWithType: IConverter<TSource, TTarget>.Convert(TSource)
+  nameWithType.vb: IConverter(Of TSource, TTarget).Convert(TSource)
+- uid: Platform.Converters.IConverter`2.Convert*
+  name: Convert
+  href: api/Platform.Converters.IConverter-2.html#Platform_Converters_IConverter_2_Convert_
+  commentId: Overload:Platform.Converters.IConverter`2.Convert
+  isSpec: "True"
+  fullName: Platform.Converters.IConverter<TSource, TTarget>.Convert
+  fullName.vb: Platform.Converters.IConverter(Of TSource, TTarget).Convert
+  nameWithType: IConverter<TSource, TTarget>.Convert
+  nameWithType.vb: IConverter(Of TSource, TTarget).Convert
 - uid: Platform.Converters.To
   name: To
   href: api/Platform.Converters.To.html

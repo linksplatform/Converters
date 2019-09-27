@@ -1,4 +1,9 @@
 {
+  "api/Platform.Converters.IConverter-2.html": {
+    "href": "api/Platform.Converters.IConverter-2.html",
+    "title": "Interface IConverter<TSource, TTarget> | LinksPlatform's Platform.Converters Library",
+    "keywords": "Interface IConverter<TSource, TTarget> Defines a converter between two types (TSource and TTarget). Определяет конвертер между двумя типами (исходным TSource и целевым TTarget). Namespace : Platform.Converters Assembly : Platform.Converters.dll Syntax public interface IConverter<in TSource, out TTarget> Type Parameters Name Description TSource Source type of conversion. Исходный тип конверсии. TTarget Target type of conversion. Целевой тип конверсии. Methods | Improve this Doc View Source Convert(TSource) Converts the value of the source type (TSource) to the value of the target type. Конвертирует значение исходного типа (TSource) в значение целевого типа. Declaration TTarget Convert(TSource source) Parameters Type Name Description TSource source The source type value (TSource). Значение исходного типа (TSource). Returns Type Description TTarget The value is converted to the target type (TTarget). Значение ковертированное в целевой тип (TTarget)."
+  },
   "README.html": {
     "href": "README.html",
     "title": "Converters | LinksPlatform's Platform.Converters Library",
@@ -9,10 +14,15 @@
     "title": "Class To<T> | LinksPlatform's Platform.Converters Library",
     "keywords": "Class To<T> Inheritance Object To<T> Inherited Members Object.Equals(Object) Object.Equals(Object, Object) Object.GetHashCode() Object.GetType() Object.MemberwiseClone() Object.ReferenceEquals(Object, Object) Object.ToString() Namespace : Platform.Converters Assembly : Platform.Converters.dll Syntax public static class To<T> Type Parameters Name Description T Fields | Improve this Doc View Source Signed Declaration public static readonly Func<T, object> Signed Field Value Type Description Func <T, Object > | Improve this Doc View Source Unsigned Declaration public static readonly Func<T, object> Unsigned Field Value Type Description Func <T, Object > | Improve this Doc View Source UnsignedAs Declaration public static readonly Func<object, T> UnsignedAs Field Value Type Description Func < Object , T>"
   },
+  "api/Platform.Converters.IConverter-1.html": {
+    "href": "api/Platform.Converters.IConverter-1.html",
+    "title": "Interface IConverter<T> | LinksPlatform's Platform.Converters Library",
+    "keywords": "Interface IConverter<T> Defines a converter between two values of the same type. Определяет конвертер между двумя значениями одного типа. Inherited Members IConverter<T, T>.Convert(T) Namespace : Platform.Converters Assembly : Platform.Converters.dll Syntax public interface IConverter<T> : IConverter<T, T> Type Parameters Name Description T Type of value to convert. Тип преобразуемого значения."
+  },
   "api/Platform.Converters.html": {
     "href": "api/Platform.Converters.html",
     "title": "Namespace Platform.Converters | LinksPlatform's Platform.Converters Library",
-    "keywords": "Namespace Platform.Converters Classes To To<T>"
+    "keywords": "Namespace Platform.Converters Classes To To<T> Interfaces IConverter<T> Defines a converter between two values of the same type. Определяет конвертер между двумя значениями одного типа. IConverter<TSource, TTarget> Defines a converter between two types (TSource and TTarget). Определяет конвертер между двумя типами (исходным TSource и целевым TTarget)."
   },
   "api/Platform.Converters.To.html": {
     "href": "api/Platform.Converters.To.html",
