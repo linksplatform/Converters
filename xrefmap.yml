@@ -7,6 +7,59 @@ references:
   commentId: N:Platform.Converters
   fullName: Platform.Converters
   nameWithType: Platform.Converters
+- uid: Platform.Converters.CachingConverterDecorator`2
+  name: CachingConverterDecorator<TSource, TTarget>
+  href: api/Platform.Converters.CachingConverterDecorator-2.html
+  commentId: T:Platform.Converters.CachingConverterDecorator`2
+  name.vb: CachingConverterDecorator(Of TSource, TTarget)
+  fullName: Platform.Converters.CachingConverterDecorator<TSource, TTarget>
+  fullName.vb: Platform.Converters.CachingConverterDecorator(Of TSource, TTarget)
+  nameWithType: CachingConverterDecorator<TSource, TTarget>
+  nameWithType.vb: CachingConverterDecorator(Of TSource, TTarget)
+- uid: Platform.Converters.CachingConverterDecorator`2.#ctor(Platform.Converters.IConverter{`0,`1})
+  name: CachingConverterDecorator(IConverter<TSource, TTarget>)
+  href: api/Platform.Converters.CachingConverterDecorator-2.html#Platform_Converters_CachingConverterDecorator_2__ctor_Platform_Converters_IConverter__0__1__
+  commentId: M:Platform.Converters.CachingConverterDecorator`2.#ctor(Platform.Converters.IConverter{`0,`1})
+  name.vb: CachingConverterDecorator(IConverter(Of TSource, TTarget))
+  fullName: Platform.Converters.CachingConverterDecorator<TSource, TTarget>.CachingConverterDecorator(Platform.Converters.IConverter<TSource, TTarget>)
+  fullName.vb: Platform.Converters.CachingConverterDecorator(Of TSource, TTarget).CachingConverterDecorator(Platform.Converters.IConverter(Of TSource, TTarget))
+  nameWithType: CachingConverterDecorator<TSource, TTarget>.CachingConverterDecorator(IConverter<TSource, TTarget>)
+  nameWithType.vb: CachingConverterDecorator(Of TSource, TTarget).CachingConverterDecorator(IConverter(Of TSource, TTarget))
+- uid: Platform.Converters.CachingConverterDecorator`2.#ctor(Platform.Converters.IConverter{`0,`1},System.Collections.Generic.IDictionary{`0,`1})
+  name: CachingConverterDecorator(IConverter<TSource, TTarget>, IDictionary<TSource, TTarget>)
+  href: api/Platform.Converters.CachingConverterDecorator-2.html#Platform_Converters_CachingConverterDecorator_2__ctor_Platform_Converters_IConverter__0__1__System_Collections_Generic_IDictionary__0__1__
+  commentId: M:Platform.Converters.CachingConverterDecorator`2.#ctor(Platform.Converters.IConverter{`0,`1},System.Collections.Generic.IDictionary{`0,`1})
+  name.vb: CachingConverterDecorator(IConverter(Of TSource, TTarget), IDictionary(Of TSource, TTarget))
+  fullName: Platform.Converters.CachingConverterDecorator<TSource, TTarget>.CachingConverterDecorator(Platform.Converters.IConverter<TSource, TTarget>, System.Collections.Generic.IDictionary<TSource, TTarget>)
+  fullName.vb: Platform.Converters.CachingConverterDecorator(Of TSource, TTarget).CachingConverterDecorator(Platform.Converters.IConverter(Of TSource, TTarget), System.Collections.Generic.IDictionary(Of TSource, TTarget))
+  nameWithType: CachingConverterDecorator<TSource, TTarget>.CachingConverterDecorator(IConverter<TSource, TTarget>, IDictionary<TSource, TTarget>)
+  nameWithType.vb: CachingConverterDecorator(Of TSource, TTarget).CachingConverterDecorator(IConverter(Of TSource, TTarget), IDictionary(Of TSource, TTarget))
+- uid: Platform.Converters.CachingConverterDecorator`2.#ctor*
+  name: CachingConverterDecorator
+  href: api/Platform.Converters.CachingConverterDecorator-2.html#Platform_Converters_CachingConverterDecorator_2__ctor_
+  commentId: Overload:Platform.Converters.CachingConverterDecorator`2.#ctor
+  isSpec: "True"
+  fullName: Platform.Converters.CachingConverterDecorator<TSource, TTarget>.CachingConverterDecorator
+  fullName.vb: Platform.Converters.CachingConverterDecorator(Of TSource, TTarget).CachingConverterDecorator
+  nameWithType: CachingConverterDecorator<TSource, TTarget>.CachingConverterDecorator
+  nameWithType.vb: CachingConverterDecorator(Of TSource, TTarget).CachingConverterDecorator
+- uid: Platform.Converters.CachingConverterDecorator`2.Convert(`0)
+  name: Convert(TSource)
+  href: api/Platform.Converters.CachingConverterDecorator-2.html#Platform_Converters_CachingConverterDecorator_2_Convert__0_
+  commentId: M:Platform.Converters.CachingConverterDecorator`2.Convert(`0)
+  fullName: Platform.Converters.CachingConverterDecorator<TSource, TTarget>.Convert(TSource)
+  fullName.vb: Platform.Converters.CachingConverterDecorator(Of TSource, TTarget).Convert(TSource)
+  nameWithType: CachingConverterDecorator<TSource, TTarget>.Convert(TSource)
+  nameWithType.vb: CachingConverterDecorator(Of TSource, TTarget).Convert(TSource)
+- uid: Platform.Converters.CachingConverterDecorator`2.Convert*
+  name: Convert
+  href: api/Platform.Converters.CachingConverterDecorator-2.html#Platform_Converters_CachingConverterDecorator_2_Convert_
+  commentId: Overload:Platform.Converters.CachingConverterDecorator`2.Convert
+  isSpec: "True"
+  fullName: Platform.Converters.CachingConverterDecorator<TSource, TTarget>.Convert
+  fullName.vb: Platform.Converters.CachingConverterDecorator(Of TSource, TTarget).Convert
+  nameWithType: CachingConverterDecorator<TSource, TTarget>.Convert
+  nameWithType.vb: CachingConverterDecorator(Of TSource, TTarget).Convert
 - uid: Platform.Converters.IConverter`1
   name: IConverter<T>
   href: api/Platform.Converters.IConverter-1.html
