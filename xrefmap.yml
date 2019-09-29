@@ -60,6 +60,32 @@ references:
   fullName.vb: Platform.Converters.CachingConverterDecorator(Of TSource, TTarget).Convert
   nameWithType: CachingConverterDecorator<TSource, TTarget>.Convert
   nameWithType.vb: CachingConverterDecorator(Of TSource, TTarget).Convert
+- uid: Platform.Converters.Converter`2
+  name: Converter<TSource, TTarget>
+  href: api/Platform.Converters.Converter-2.html
+  commentId: T:Platform.Converters.Converter`2
+  name.vb: Converter(Of TSource, TTarget)
+  fullName: Platform.Converters.Converter<TSource, TTarget>
+  fullName.vb: Platform.Converters.Converter(Of TSource, TTarget)
+  nameWithType: Converter<TSource, TTarget>
+  nameWithType.vb: Converter(Of TSource, TTarget)
+- uid: Platform.Converters.Converter`2.Default
+  name: Default
+  href: api/Platform.Converters.Converter-2.html#Platform_Converters_Converter_2_Default
+  commentId: P:Platform.Converters.Converter`2.Default
+  fullName: Platform.Converters.Converter<TSource, TTarget>.Default
+  fullName.vb: Platform.Converters.Converter(Of TSource, TTarget).Default
+  nameWithType: Converter<TSource, TTarget>.Default
+  nameWithType.vb: Converter(Of TSource, TTarget).Default
+- uid: Platform.Converters.Converter`2.Default*
+  name: Default
+  href: api/Platform.Converters.Converter-2.html#Platform_Converters_Converter_2_Default_
+  commentId: Overload:Platform.Converters.Converter`2.Default
+  isSpec: "True"
+  fullName: Platform.Converters.Converter<TSource, TTarget>.Default
+  fullName.vb: Platform.Converters.Converter(Of TSource, TTarget).Default
+  nameWithType: Converter<TSource, TTarget>.Default
+  nameWithType.vb: Converter(Of TSource, TTarget).Default
 - uid: Platform.Converters.IConverter`1
   name: IConverter<T>
   href: api/Platform.Converters.IConverter-1.html
