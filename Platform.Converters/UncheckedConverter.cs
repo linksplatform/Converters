@@ -2,43 +2,39 @@
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
+using System.Runtime.CompilerServices;
 using Platform.Reflection;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace Platform.Converters
 {
-    public static class Converter<TSource, TTarget>
+    public abstract class UncheckedConverter<TSource, TTarget> : IConverter<TSource, TTarget>
     {
-        public static IConverter<TSource, TTarget> Default { get; set; }
+        public static UncheckedConverter<TSource, TTarget> Default { get; }
 
-        static Converter()
+        static UncheckedConverter()
         {
             AssemblyName assemblyName = new AssemblyName(GetNewName());
             var assembly = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
             var module = assembly.DefineDynamicModule(GetNewName());
-            var type = module.DefineType(GetNewName(), TypeAttributes.Public | TypeAttributes.Class, null, Types<IConverter<TSource, TTarget>>.Array);
-            EmitMethod<System.Converter<TSource, TTarget>>(type, "Convert", (il) =>
+            var type = module.DefineType(GetNewName(), TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.Sealed, typeof(UncheckedConverter<TSource, TTarget>));
+            EmitMethod<Converter<TSource, TTarget>>(type, "Convert", (il) =>
             {
-                if (typeof(TSource) == typeof(TTarget))
+                il.LoadArgument(1);
+                if (typeof(TSource) != typeof(TTarget))
                 {
-                    il.LoadArgument(1);
-                    il.Return();
+                    UncheckedConvert(il);
                 }
-                else
-                {
-                    il.LoadArgument(1);
-                    ConvertTo<TTarget>(il);
-                    il.Return();
-                }
+                il.Return();
             });
             var typeInfo = type.CreateTypeInfo();
-            Default = (IConverter<TSource, TTarget>)Activator.CreateInstance(typeInfo);
+            Default = (UncheckedConverter<TSource, TTarget>)Activator.CreateInstance(typeInfo);
         }
 
-        private static void ConvertTo<T>(ILGenerator generator)
+        private static void UncheckedConvert(ILGenerator generator)
         {
-            var type = typeof(T);
+            var type = typeof(TTarget);
             if (type == typeof(short))
             {
                 generator.Emit(OpCodes.Conv_I2);
@@ -73,7 +69,14 @@ namespace Platform.Converters
             }
             else if (type == typeof(float))
             {
-                generator.Emit(OpCodes.Conv_R4);
+                if (NumericType<TSource>.IsSigned)
+                {
+                    generator.Emit(OpCodes.Conv_R4);
+                }
+                else
+                {
+                    generator.Emit(OpCodes.Conv_R_Un);
+                }
             }
             else if (type == typeof(double))
             {
@@ -91,12 +94,15 @@ namespace Platform.Converters
             var invoke = delegateType.GetMethod("Invoke");
             var returnType = invoke.ReturnType;
             var parameterTypes = invoke.GetParameters().Select(s => s.ParameterType).ToArray();
-            MethodBuilder method = type.DefineMethod(methodName, MethodAttributes.Public | MethodAttributes.Virtual, returnType, parameterTypes);
+            MethodBuilder method = type.DefineMethod(methodName, MethodAttributes.Public | MethodAttributes.Virtual | MethodAttributes.Final | MethodAttributes.HideBySig, returnType, parameterTypes);
             method.SetImplementationFlags(MethodImplAttributes.IL | MethodImplAttributes.Managed | MethodImplAttributes.AggressiveInlining);
             var generator = method.GetILGenerator();
             emitCode(generator);
         }
 
         private static string GetNewName() => Guid.NewGuid().ToString("N");
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public abstract TTarget Convert(TSource source);
     }
 }

@@ -10,15 +10,17 @@ namespace Platform.Converters.Tests
     public class ConverterTests
     {
         private readonly ITestOutputHelper _output;
-        private static readonly IConverter<ulong, ulong> _uInt64ToUInt64Converter = Converter<ulong, ulong>.Default;
-        private static readonly IConverter<int, ulong> _int32ToUInt64converter = Converter<int, ulong>.Default;
+        private static readonly UncheckedConverter<ulong, ulong> _uInt64ToUInt64Converter = UncheckedConverter<ulong, ulong>.Default;
+        private static readonly UncheckedConverter<int, ulong> _int32ToUInt64converter = UncheckedConverter<int, ulong>.Default;
 
         public ConverterTests(ITestOutputHelper output) => _output = output;
 
         [Fact]
         public void SameTypeTest()
         {
-            var result = Converter<ulong, ulong>.Default.Convert(2UL);
+            var result = UncheckedConverter<ulong, ulong>.Default.Convert(2UL);
+            Assert.Equal(2UL, result);
+            result = CheckedConverter<ulong, ulong>.Default.Convert(2UL);
             Assert.Equal(2UL, result);
         }
 
@@ -35,7 +37,7 @@ namespace Platform.Converters.Tests
             }
             for (int i = 0; i < N; i++)
             {
-                result = Converter<ulong, ulong>.Default.Convert(2UL);
+                result = UncheckedConverter<ulong, ulong>.Default.Convert(2UL);
             }
             for (int i = 0; i < N; i++)
             {
@@ -65,7 +67,7 @@ namespace Platform.Converters.Tests
             {
                 for (int i = 0; i < N; i++)
                 {
-                    result = Converter<ulong, ulong>.Default.Convert(2UL);
+                    result = UncheckedConverter<ulong, ulong>.Default.Convert(2UL);
                 }
             });
             var ts3 = Performance.Measure(() =>
@@ -118,7 +120,9 @@ namespace Platform.Converters.Tests
         [Fact]
         public void Int32ToUInt64Test()
         {
-            var result = Converter<int, ulong>.Default.Convert(2);
+            var result = UncheckedConverter<int, ulong>.Default.Convert(2);
+            Assert.Equal(2UL, result);
+            result = CheckedConverter<int, ulong>.Default.Convert(2);
             Assert.Equal(2UL, result);
         }
 
@@ -135,7 +139,7 @@ namespace Platform.Converters.Tests
             }
             for (int i = 0; i < N; i++)
             {
-                result = Converter<ulong, ulong>.Default.Convert(2);
+                result = UncheckedConverter<ulong, ulong>.Default.Convert(2);
             }
             for (int i = 0; i < N; i++)
             {
@@ -165,7 +169,7 @@ namespace Platform.Converters.Tests
             {
                 for (int i = 0; i < N; i++)
                 {
-                    result = Converter<ulong, ulong>.Default.Convert(2);
+                    result = UncheckedConverter<ulong, ulong>.Default.Convert(2);
                 }
             });
             var ts3 = Performance.Measure(() =>
