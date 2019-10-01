@@ -6,6 +6,7 @@ using Platform.Reflection;
 
 namespace Platform.Converters
 {
+    [Obsolete]
     public static class To<T>
     {
         public static readonly Func<T, object> Signed;

@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace Platform.Converters
 {
+    [Obsolete]
     public static class To
     {
         public static readonly char UnknownCharacter = '�';
