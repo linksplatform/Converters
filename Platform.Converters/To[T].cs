@@ -9,16 +9,9 @@ namespace Platform.Converters
     [Obsolete]
     public static class To<T>
     {
-        public static readonly Func<T, object> Signed;
-        public static readonly Func<T, object> Unsigned;
-        public static readonly Func<object, T> UnsignedAs;
-
-        static To()
-        {
-            Signed = CompileSignedDelegate();
-            Unsigned = CompileUnsignedDelegate();
-            UnsignedAs = CompileUnsignedAsDelegate();
-        }
+        public static readonly Func<T, object> Signed = CompileSignedDelegate();
+        public static readonly Func<T, object> Unsigned = CompileUnsignedDelegate();
+        public static readonly Func<object, T> UnsignedAs = CompileUnsignedAsDelegate();
 
         static private Func<T, object> CompileSignedDelegate()
         {
