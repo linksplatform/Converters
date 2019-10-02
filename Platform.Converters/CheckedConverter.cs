@@ -10,14 +10,14 @@ namespace Platform.Converters
 {
     public abstract class CheckedConverter<TSource, TTarget> : IConverter<TSource, TTarget>
     {
-        public static UncheckedConverter<TSource, TTarget> Default { get; }
+        public static CheckedConverter<TSource, TTarget> Default { get; }
 
         static CheckedConverter()
         {
             AssemblyName assemblyName = new AssemblyName(GetNewName());
             var assembly = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
             var module = assembly.DefineDynamicModule(GetNewName());
-            var type = module.DefineType(GetNewName(), TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.Sealed, typeof(UncheckedConverter<TSource, TTarget>));
+            var type = module.DefineType(GetNewName(), TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.Sealed, typeof(CheckedConverter<TSource, TTarget>));
             EmitMethod<Converter<TSource, TTarget>>(type, "Convert", (il) =>
             {
                 il.LoadArgument(1);
@@ -28,7 +28,7 @@ namespace Platform.Converters
                 il.Return();
             });
             var typeInfo = type.CreateTypeInfo();
-            Default = (UncheckedConverter<TSource, TTarget>)Activator.CreateInstance(typeInfo);
+            Default = (CheckedConverter<TSource, TTarget>)Activator.CreateInstance(typeInfo);
         }
 
         private static void CheckedConvert(ILGenerator generator)
