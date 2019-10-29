@@ -19,7 +19,7 @@ namespace Platform.Converters
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static UncheckedConverter()
         {
-            AssemblyName assemblyName = new AssemblyName(GetNewName());
+            var assemblyName = new AssemblyName(GetNewName());
             var assembly = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
             var module = assembly.DefineDynamicModule(GetNewName());
             var type = module.DefineType(GetNewName(), TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.Sealed, typeof(UncheckedConverter<TSource, TTarget>));
