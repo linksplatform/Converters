@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.CompilerServices;
 using Platform.Exceptions;
 using Platform.Reflection;
 
@@ -13,6 +14,7 @@ namespace Platform.Converters
         public static readonly Func<T, object> Unsigned = CompileUnsignedDelegate();
         public static readonly Func<object, T> UnsignedAs = CompileUnsignedAsDelegate();
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static private Func<T, object> CompileSignedDelegate()
         {
             return DelegateHelpers.Compile<Func<T, object>>(emiter =>
@@ -26,6 +28,7 @@ namespace Platform.Converters
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static private Func<T, object> CompileUnsignedDelegate()
         {
             return DelegateHelpers.Compile<Func<T, object>>(emiter =>
@@ -39,6 +42,7 @@ namespace Platform.Converters
             });
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static private Func<object, T> CompileUnsignedAsDelegate()
         {
             return DelegateHelpers.Compile<Func<object, T>>(emiter =>

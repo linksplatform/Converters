@@ -10,8 +10,13 @@ namespace Platform.Converters
 {
     public abstract class UncheckedConverter<TSource, TTarget> : IConverter<TSource, TTarget>
     {
-        public static UncheckedConverter<TSource, TTarget> Default { get; }
+        public static UncheckedConverter<TSource, TTarget> Default
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get;
+        }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         static UncheckedConverter()
         {
             AssemblyName assemblyName = new AssemblyName(GetNewName());
@@ -31,6 +36,7 @@ namespace Platform.Converters
             Default = (UncheckedConverter<TSource, TTarget>)Activator.CreateInstance(typeInfo);
         }
 
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static string GetNewName() => Guid.NewGuid().ToString("N");
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
