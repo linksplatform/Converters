@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Platform.Collections;
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -17,14 +18,6 @@ namespace Platform.Converters
         public CachingConverterDecorator(IConverter<TSource, TTarget> baseConverter) : this(baseConverter, new Dictionary<TSource, TTarget>()) { }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public TTarget Convert(TSource source)
-        {
-            if (!_cache.TryGetValue(source, out TTarget value))
-            {
-                value = _baseConverter.Convert(source);
-                _cache.Add(source, value);
-            }
-            return value;
-        }
+        public TTarget Convert(TSource source) => _cache.GetOrAdd(source, _baseConverter.Convert);
     }
 }
