@@ -39,7 +39,6 @@ Project file updated to support multiple build environments: dotnet, Travis CI, 
 
   <ItemGroup>
     <PackageReference Include="Platform.Reflection" Version="0.2.0" />
-    <PackageReference Include="System.Reflection.Emit" Version="4.6.0" />
   </ItemGroup>
   
 </Project>
