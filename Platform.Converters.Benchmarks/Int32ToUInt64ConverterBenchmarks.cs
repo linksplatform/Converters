@@ -12,7 +12,7 @@ namespace Platform.Converters.Benchmarks
     [MemoryDiagnoser]
     public class Int32ToUInt64ConverterBenchmarks
     {
-        [Params(1000, 10000, 100000, 1000000, 10000000, 100000000)]
+        [Params(10000, 1000000, 100000000)]
         public int N { get; set; }
 
         private static UncheckedConverter<int, ulong> _int32ToUInt64converter;
@@ -41,6 +41,9 @@ namespace Platform.Converters.Benchmarks
 
         [Benchmark]
         public ulong ToUInt64() => To.UInt64(2);
+
+        [Benchmark]
+        public ulong SystemConvertObjectToUInt64() => Convert.ToUInt64((object)2);
 
         [Benchmark]
         public ulong SystemConvertToUInt64() => Convert.ToUInt64(2);
