@@ -49,7 +49,7 @@ Refactoring, performance optimizations, issues fix.</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Reflection" Version="0.2.0" />
+    <PackageReference Include="Platform.Reflection" Version="0.3.0" />
   </ItemGroup>
   
 </Project>
