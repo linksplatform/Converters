@@ -69,23 +69,6 @@ references:
   fullName.vb: Platform.Converters.CheckedConverter(Of TSource, TTarget)
   nameWithType: CheckedConverter<TSource, TTarget>
   nameWithType.vb: CheckedConverter(Of TSource, TTarget)
-- uid: Platform.Converters.CheckedConverter`2.Convert(`0)
-  name: Convert(TSource)
-  href: api/Platform.Converters.CheckedConverter-2.html#Platform_Converters_CheckedConverter_2_Convert__0_
-  commentId: M:Platform.Converters.CheckedConverter`2.Convert(`0)
-  fullName: Platform.Converters.CheckedConverter<TSource, TTarget>.Convert(TSource)
-  fullName.vb: Platform.Converters.CheckedConverter(Of TSource, TTarget).Convert(TSource)
-  nameWithType: CheckedConverter<TSource, TTarget>.Convert(TSource)
-  nameWithType.vb: CheckedConverter(Of TSource, TTarget).Convert(TSource)
-- uid: Platform.Converters.CheckedConverter`2.Convert*
-  name: Convert
-  href: api/Platform.Converters.CheckedConverter-2.html#Platform_Converters_CheckedConverter_2_Convert_
-  commentId: Overload:Platform.Converters.CheckedConverter`2.Convert
-  isSpec: "True"
-  fullName: Platform.Converters.CheckedConverter<TSource, TTarget>.Convert
-  fullName.vb: Platform.Converters.CheckedConverter(Of TSource, TTarget).Convert
-  nameWithType: CheckedConverter<TSource, TTarget>.Convert
-  nameWithType.vb: CheckedConverter(Of TSource, TTarget).Convert
 - uid: Platform.Converters.CheckedConverter`2.Default
   name: Default
   href: api/Platform.Converters.CheckedConverter-2.html#Platform_Converters_CheckedConverter_2_Default
@@ -103,6 +86,84 @@ references:
   fullName.vb: Platform.Converters.CheckedConverter(Of TSource, TTarget).Default
   nameWithType: CheckedConverter<TSource, TTarget>.Default
   nameWithType.vb: CheckedConverter(Of TSource, TTarget).Default
+- uid: Platform.Converters.ConverterBase`2
+  name: ConverterBase<TSource, TTarget>
+  href: api/Platform.Converters.ConverterBase-2.html
+  commentId: T:Platform.Converters.ConverterBase`2
+  name.vb: ConverterBase(Of TSource, TTarget)
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget)
+  nameWithType: ConverterBase<TSource, TTarget>
+  nameWithType.vb: ConverterBase(Of TSource, TTarget)
+- uid: Platform.Converters.ConverterBase`2.Convert(`0)
+  name: Convert(TSource)
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_Convert__0_
+  commentId: M:Platform.Converters.ConverterBase`2.Convert(`0)
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.Convert(TSource)
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).Convert(TSource)
+  nameWithType: ConverterBase<TSource, TTarget>.Convert(TSource)
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).Convert(TSource)
+- uid: Platform.Converters.ConverterBase`2.Convert*
+  name: Convert
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_Convert_
+  commentId: Overload:Platform.Converters.ConverterBase`2.Convert
+  isSpec: "True"
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.Convert
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).Convert
+  nameWithType: ConverterBase<TSource, TTarget>.Convert
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).Convert
+- uid: Platform.Converters.ConverterBase`2.ConvertAndUnbox(ILGenerator)
+  name: ConvertAndUnbox(ILGenerator)
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_ConvertAndUnbox_ILGenerator_
+  commentId: M:Platform.Converters.ConverterBase`2.ConvertAndUnbox(ILGenerator)
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.ConvertAndUnbox(ILGenerator)
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).ConvertAndUnbox(ILGenerator)
+  nameWithType: ConverterBase<TSource, TTarget>.ConvertAndUnbox(ILGenerator)
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).ConvertAndUnbox(ILGenerator)
+- uid: Platform.Converters.ConverterBase`2.ConvertAndUnbox*
+  name: ConvertAndUnbox
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_ConvertAndUnbox_
+  commentId: Overload:Platform.Converters.ConverterBase`2.ConvertAndUnbox
+  isSpec: "True"
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.ConvertAndUnbox
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).ConvertAndUnbox
+  nameWithType: ConverterBase<TSource, TTarget>.ConvertAndUnbox
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).ConvertAndUnbox
+- uid: Platform.Converters.ConverterBase`2.CreateTypeInheritedFrom*
+  name: CreateTypeInheritedFrom
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_CreateTypeInheritedFrom_
+  commentId: Overload:Platform.Converters.ConverterBase`2.CreateTypeInheritedFrom
+  isSpec: "True"
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.CreateTypeInheritedFrom
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).CreateTypeInheritedFrom
+  nameWithType: ConverterBase<TSource, TTarget>.CreateTypeInheritedFrom
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).CreateTypeInheritedFrom
+- uid: Platform.Converters.ConverterBase`2.CreateTypeInheritedFrom``1
+  name: CreateTypeInheritedFrom<TBaseClass>()
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_CreateTypeInheritedFrom__1
+  commentId: M:Platform.Converters.ConverterBase`2.CreateTypeInheritedFrom``1
+  name.vb: CreateTypeInheritedFrom(Of TBaseClass)()
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.CreateTypeInheritedFrom<TBaseClass>()
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).CreateTypeInheritedFrom(Of TBaseClass)()
+  nameWithType: ConverterBase<TSource, TTarget>.CreateTypeInheritedFrom<TBaseClass>()
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).CreateTypeInheritedFrom(Of TBaseClass)()
+- uid: Platform.Converters.ConverterBase`2.GetNewName
+  name: GetNewName()
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_GetNewName
+  commentId: M:Platform.Converters.ConverterBase`2.GetNewName
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.GetNewName()
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).GetNewName()
+  nameWithType: ConverterBase<TSource, TTarget>.GetNewName()
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).GetNewName()
+- uid: Platform.Converters.ConverterBase`2.GetNewName*
+  name: GetNewName
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_GetNewName_
+  commentId: Overload:Platform.Converters.ConverterBase`2.GetNewName
+  isSpec: "True"
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.GetNewName
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).GetNewName
+  nameWithType: ConverterBase<TSource, TTarget>.GetNewName
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).GetNewName
 - uid: Platform.Converters.IConverter`1
   name: IConverter<T>
   href: api/Platform.Converters.IConverter-1.html
@@ -480,23 +541,6 @@ references:
   fullName.vb: Platform.Converters.UncheckedConverter(Of TSource, TTarget)
   nameWithType: UncheckedConverter<TSource, TTarget>
   nameWithType.vb: UncheckedConverter(Of TSource, TTarget)
-- uid: Platform.Converters.UncheckedConverter`2.Convert(`0)
-  name: Convert(TSource)
-  href: api/Platform.Converters.UncheckedConverter-2.html#Platform_Converters_UncheckedConverter_2_Convert__0_
-  commentId: M:Platform.Converters.UncheckedConverter`2.Convert(`0)
-  fullName: Platform.Converters.UncheckedConverter<TSource, TTarget>.Convert(TSource)
-  fullName.vb: Platform.Converters.UncheckedConverter(Of TSource, TTarget).Convert(TSource)
-  nameWithType: UncheckedConverter<TSource, TTarget>.Convert(TSource)
-  nameWithType.vb: UncheckedConverter(Of TSource, TTarget).Convert(TSource)
-- uid: Platform.Converters.UncheckedConverter`2.Convert*
-  name: Convert
-  href: api/Platform.Converters.UncheckedConverter-2.html#Platform_Converters_UncheckedConverter_2_Convert_
-  commentId: Overload:Platform.Converters.UncheckedConverter`2.Convert
-  isSpec: "True"
-  fullName: Platform.Converters.UncheckedConverter<TSource, TTarget>.Convert
-  fullName.vb: Platform.Converters.UncheckedConverter(Of TSource, TTarget).Convert
-  nameWithType: UncheckedConverter<TSource, TTarget>.Convert
-  nameWithType.vb: UncheckedConverter(Of TSource, TTarget).Convert
 - uid: Platform.Converters.UncheckedConverter`2.Default
   name: Default
   href: api/Platform.Converters.UncheckedConverter-2.html#Platform_Converters_UncheckedConverter_2_Default
