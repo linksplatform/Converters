@@ -12,9 +12,6 @@ namespace Platform.Converters.Benchmarks
     [MemoryDiagnoser]
     public class UInt64ToUInt64ConverterBenchmarks
     {
-        [Params(10000, 1000000, 100000000)]
-        public int N { get; set; }
-
         private static UncheckedConverter<ulong, ulong> _uInt64ToUInt64Converter;
         private static IFormatProvider _formatProvider;
 
