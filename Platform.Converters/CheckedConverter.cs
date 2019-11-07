@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Reflection;
-using System.Reflection.Emit;
 using System.Runtime.CompilerServices;
 using Platform.Reflection;
 
@@ -8,38 +6,36 @@ using Platform.Reflection;
 
 namespace Platform.Converters
 {
-    public abstract class CheckedConverter<TSource, TTarget> : IConverter<TSource, TTarget>
+    public abstract class CheckedConverter<TSource, TTarget> : ConverterBase<TSource, TTarget>
     {
         public static CheckedConverter<TSource, TTarget> Default
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get;
-        }
+        } = CompileCheckedConverter();
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        static CheckedConverter()
+        private static CheckedConverter<TSource, TTarget> CompileCheckedConverter()
         {
-            var assemblyName = new AssemblyName(GetNewName());
-            var assembly = AssemblyBuilder.DefineDynamicAssembly(assemblyName, AssemblyBuilderAccess.Run);
-            var module = assembly.DefineDynamicModule(GetNewName());
-            var type = module.DefineType(GetNewName(), TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.Sealed, typeof(CheckedConverter<TSource, TTarget>));
-            type.EmitVirtualMethod<Converter<TSource, TTarget>>("Convert", il =>
+            var type = CreateTypeInheritedFrom<CheckedConverter<TSource, TTarget>>();
+            type.EmitFinalVirtualMethod<Converter<TSource, TTarget>>(nameof(IConverter<TSource, TTarget>.Convert), il =>
             {
                 il.LoadArgument(1);
-                if (typeof(TSource) != typeof(TTarget))
+                if (typeof(TSource) == typeof(object) && typeof(TTarget) != typeof(object))
+                {
+                    ConvertAndUnbox(il);
+                }
+                else if (typeof(TSource) != typeof(object) && typeof(TTarget) != typeof(object))
                 {
                     il.CheckedConvert<TSource, TTarget>();
                 }
+                else if (typeof(TSource) != typeof(object) && typeof(TTarget) == typeof(object))
+                {
+                    il.Box(typeof(TSource));
+                }
                 il.Return();
             });
-            var typeInfo = type.CreateTypeInfo();
-            Default = (CheckedConverter<TSource, TTarget>)Activator.CreateInstance(typeInfo);
+            return (CheckedConverter<TSource, TTarget>)Activator.CreateInstance(type.CreateTypeInfo());
         }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private static string GetNewName() => Guid.NewGuid().ToString("N");
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public abstract TTarget Convert(TSource source);
     }
 }
