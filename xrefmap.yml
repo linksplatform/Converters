@@ -147,6 +147,24 @@ references:
   fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).CreateTypeInheritedFrom(Of TBaseClass)()
   nameWithType: ConverterBase<TSource, TTarget>.CreateTypeInheritedFrom<TBaseClass>()
   nameWithType.vb: ConverterBase(Of TSource, TTarget).CreateTypeInheritedFrom(Of TBaseClass)()
+- uid: Platform.Converters.ConverterBase`2.EmitConvertMethod(TypeBuilder,System.Action{ILGenerator})
+  name: EmitConvertMethod(TypeBuilder, Action<ILGenerator>)
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_EmitConvertMethod_TypeBuilder_System_Action_ILGenerator__
+  commentId: M:Platform.Converters.ConverterBase`2.EmitConvertMethod(TypeBuilder,System.Action{ILGenerator})
+  name.vb: EmitConvertMethod(TypeBuilder, Action(Of ILGenerator))
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.EmitConvertMethod(TypeBuilder, System.Action<ILGenerator>)
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).EmitConvertMethod(TypeBuilder, System.Action(Of ILGenerator))
+  nameWithType: ConverterBase<TSource, TTarget>.EmitConvertMethod(TypeBuilder, Action<ILGenerator>)
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).EmitConvertMethod(TypeBuilder, Action(Of ILGenerator))
+- uid: Platform.Converters.ConverterBase`2.EmitConvertMethod*
+  name: EmitConvertMethod
+  href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_EmitConvertMethod_
+  commentId: Overload:Platform.Converters.ConverterBase`2.EmitConvertMethod
+  isSpec: "True"
+  fullName: Platform.Converters.ConverterBase<TSource, TTarget>.EmitConvertMethod
+  fullName.vb: Platform.Converters.ConverterBase(Of TSource, TTarget).EmitConvertMethod
+  nameWithType: ConverterBase<TSource, TTarget>.EmitConvertMethod
+  nameWithType.vb: ConverterBase(Of TSource, TTarget).EmitConvertMethod
 - uid: Platform.Converters.ConverterBase`2.GetNewName
   name: GetNewName()
   href: api/Platform.Converters.ConverterBase-2.html#Platform_Converters_ConverterBase_2_GetNewName
@@ -558,3 +576,29 @@ references:
   fullName.vb: Platform.Converters.UncheckedConverter(Of TSource, TTarget).Default
   nameWithType: UncheckedConverter<TSource, TTarget>.Default
   nameWithType.vb: UncheckedConverter(Of TSource, TTarget).Default
+- uid: Platform.Converters.UncheckedSignExtendingConverter`2
+  name: UncheckedSignExtendingConverter<TSource, TTarget>
+  href: api/Platform.Converters.UncheckedSignExtendingConverter-2.html
+  commentId: T:Platform.Converters.UncheckedSignExtendingConverter`2
+  name.vb: UncheckedSignExtendingConverter(Of TSource, TTarget)
+  fullName: Platform.Converters.UncheckedSignExtendingConverter<TSource, TTarget>
+  fullName.vb: Platform.Converters.UncheckedSignExtendingConverter(Of TSource, TTarget)
+  nameWithType: UncheckedSignExtendingConverter<TSource, TTarget>
+  nameWithType.vb: UncheckedSignExtendingConverter(Of TSource, TTarget)
+- uid: Platform.Converters.UncheckedSignExtendingConverter`2.Default
+  name: Default
+  href: api/Platform.Converters.UncheckedSignExtendingConverter-2.html#Platform_Converters_UncheckedSignExtendingConverter_2_Default
+  commentId: P:Platform.Converters.UncheckedSignExtendingConverter`2.Default
+  fullName: Platform.Converters.UncheckedSignExtendingConverter<TSource, TTarget>.Default
+  fullName.vb: Platform.Converters.UncheckedSignExtendingConverter(Of TSource, TTarget).Default
+  nameWithType: UncheckedSignExtendingConverter<TSource, TTarget>.Default
+  nameWithType.vb: UncheckedSignExtendingConverter(Of TSource, TTarget).Default
+- uid: Platform.Converters.UncheckedSignExtendingConverter`2.Default*
+  name: Default
+  href: api/Platform.Converters.UncheckedSignExtendingConverter-2.html#Platform_Converters_UncheckedSignExtendingConverter_2_Default_
+  commentId: Overload:Platform.Converters.UncheckedSignExtendingConverter`2.Default
+  isSpec: "True"
+  fullName: Platform.Converters.UncheckedSignExtendingConverter<TSource, TTarget>.Default
+  fullName.vb: Platform.Converters.UncheckedSignExtendingConverter(Of TSource, TTarget).Default
+  nameWithType: UncheckedSignExtendingConverter<TSource, TTarget>.Default
+  nameWithType.vb: UncheckedSignExtendingConverter(Of TSource, TTarget).Default
