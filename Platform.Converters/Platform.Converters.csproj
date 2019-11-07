@@ -4,12 +4,12 @@
     <Description>LinksPlatform's Platform.Converters Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
-    <VersionPrefix>0.0.7</VersionPrefix>
+    <VersionPrefix>0.0.8</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net471;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Converters</AssemblyName>
     <PackageId>Platform.Converters</PackageId>
-    <PackageTags>LinksPlatform;Converters;CachingConverterDecorator;CheckedConverter;IConverter;To;UncheckedConverter</PackageTags>
+    <PackageTags>LinksPlatform;Converters;CachingConverterDecorator;CheckedConverter;ConverterBase;IConverter;To;UncheckedConverter;UncheckedSignExtendingConverter</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Converters</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -24,20 +24,11 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>The lowest supported version of .NET Framework is now 4.7.1.
-Added support for .NET Standard 2.1 (.NET Core 3.0).
-Platform.Reflection dependency updated from 0.1.1 to 0.2.0.
-Platform.Diagnostics dependency updated from 0.0.2 to 0.0.3.
-IConverter interfaces moved from Platform.Interfaces.
-To classes are now obsolete.
-Added CheckedConverter and UncheckedConverter classes with default implementation available at Default properties.
-Added CachingConverterDecorator.
-Source link enabled.
-Travis CI disabled.
-GitHub Actions enabled.
-Added tests.
-Added benchmarks.
-Refactoring, performance optimizations, issues fix.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Reflection dependency updated from 0.2.0 to 0.3.1.
+Added ConverterBase class.
+Added support for conversion from object and to object for all converters.
+Added UncheckedSignExtendingConverter that is able to preserve the sign while converting from unsigned integers.
+Refactoring, issues fix.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
