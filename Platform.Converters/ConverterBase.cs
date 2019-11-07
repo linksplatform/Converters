@@ -34,5 +34,27 @@ namespace Platform.Converters
             var type = module.DefineType(GetNewName(), TypeAttributes.Public | TypeAttributes.Class | TypeAttributes.Sealed, typeof(TBaseClass));
             return type;
         }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        protected static void EmitConvertMethod(TypeBuilder typeBuilder, Action<ILGenerator> emitConversion)
+        {
+            typeBuilder.EmitFinalVirtualMethod<Converter<TSource, TTarget>>(nameof(IConverter<TSource, TTarget>.Convert), il =>
+            {
+                il.LoadArgument(1);
+                if (typeof(TSource) == typeof(object) && typeof(TTarget) != typeof(object))
+                {
+                    ConvertAndUnbox(il);
+                }
+                else if (typeof(TSource) != typeof(object) && typeof(TTarget) == typeof(object))
+                {
+                    il.Box(typeof(TSource));
+                }
+                else
+                {
+                    emitConversion(il);
+                }
+                il.Return();
+            });
+        }
     }
 }

@@ -21,5 +21,14 @@ namespace Platform.Converters.Tests
             result = CheckedConverter<int, ulong>.Default.Convert(2);
             Assert.Equal(2UL, result);
         }
+
+        [Fact]
+        public void SignExtensionTest()
+        {
+            var result = UncheckedSignExtendingConverter<byte, long>.Default.Convert(128);
+            Assert.Equal(-128L, result);
+            result = UncheckedConverter<byte, long>.Default.Convert(128);
+            Assert.Equal(128L, result);
+        }
     }
 }

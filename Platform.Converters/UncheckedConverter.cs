@@ -18,23 +18,7 @@ namespace Platform.Converters
         private static UncheckedConverter<TSource, TTarget> CompileUncheckedConverter()
         {
             var type = CreateTypeInheritedFrom<UncheckedConverter<TSource, TTarget>>();
-            type.EmitFinalVirtualMethod<Converter<TSource, TTarget>>(nameof(IConverter<TSource,TTarget>.Convert), il =>
-            {
-                il.LoadArgument(1);
-                if (typeof(TSource) == typeof(object) && typeof(TTarget) != typeof(object))
-                {
-                    ConvertAndUnbox(il);
-                }
-                else if (typeof(TSource) != typeof(object) && typeof(TTarget) != typeof(object))
-                {
-                    il.UncheckedConvert<TSource, TTarget>();
-                }
-                else if (typeof(TSource) != typeof(object) && typeof(TTarget) == typeof(object))
-                {
-                    il.Box(typeof(TSource));
-                }
-                il.Return();
-            });
+            EmitConvertMethod(type, il => il.UncheckedConvert<TSource, TTarget>());
             return (UncheckedConverter<TSource, TTarget>)Activator.CreateInstance(type.CreateTypeInfo());
         }
     }
