@@ -4,7 +4,6 @@ using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
 #pragma warning disable CA1822 // Mark members as static
-#pragma warning disable CS0612 // Type or member is obsolete
 
 namespace Platform.Converters.Benchmarks
 {
@@ -35,9 +34,6 @@ namespace Platform.Converters.Benchmarks
 
         [Benchmark]
         public ulong ConverterFromGlobalStaticField() => UncheckedConverter<int, ulong>.Default.Convert(2);
-
-        [Benchmark]
-        public ulong ToUInt64() => To.UInt64(2);
 
         [Benchmark]
         public ulong SystemConvertObjectToUInt64() => Convert.ToUInt64((object)2);
