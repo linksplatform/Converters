@@ -4,12 +4,12 @@
     <Description>LinksPlatform's Platform.Converters Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
-    <VersionPrefix>0.0.8</VersionPrefix>
+    <VersionPrefix>0.1.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net471;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Converters</AssemblyName>
     <PackageId>Platform.Converters</PackageId>
-    <PackageTags>LinksPlatform;Converters;CachingConverterDecorator;CheckedConverter;ConverterBase;IConverter;To;UncheckedConverter;UncheckedSignExtendingConverter</PackageTags>
+    <PackageTags>LinksPlatform;Converters;CachingConverterDecorator;CheckedConverter;ConverterBase;IConverter;UncheckedConverter;UncheckedSignExtendingConverter</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Converters</PackageProjectUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -24,11 +24,14 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Platform.Reflection dependency updated from 0.2.0 to 0.3.1.
-Added ConverterBase class.
-Added support for conversion from object and to object for all converters.
-Added UncheckedSignExtendingConverter that is able to preserve the sign while converting from unsigned integers.
-Refactoring, issues fix.</PackageReleaseNotes>
+    <PackageReleaseNotes>Platform.Reflection dependency updated from 0.3.1 to 0.3.2.
+Obsolete To classes removed.
+New implementation of Conversion from an object that is faster than .NET version because method selection is done at compile-time and fewer additional checks performed.
+ConverterBase.ConvertAndUnbox method renamed to ConvertFromObject.
+Added GetMethodForConversionToTargetType and LoadDefault methods to ConverterBase abstract class.
+Refactoring, performance optimizations.
+
+This release is not backward compatible with the previous 0.0.8 release.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
