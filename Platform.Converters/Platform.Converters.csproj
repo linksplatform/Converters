@@ -40,7 +40,7 @@ Refactoring, issues fix.</PackageReleaseNotes>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Reflection" Version="0.3.1" />
+    <PackageReference Include="Platform.Reflection" Version="0.3.2" />
   </ItemGroup>
   
 </Project>
