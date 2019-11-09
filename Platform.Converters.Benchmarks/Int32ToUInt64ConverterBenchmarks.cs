@@ -12,12 +12,14 @@ namespace Platform.Converters.Benchmarks
     public class Int32ToUInt64ConverterBenchmarks
     {
         private static UncheckedConverter<int, ulong> _int32ToUInt64converter;
+        private static UncheckedConverter<object, ulong> _objectToUInt64Converter;
         private static IFormatProvider _formatProvider;
 
         [GlobalSetup]
         public static void Setup()
         {
             _int32ToUInt64converter = UncheckedConverter<int, ulong>.Default;
+            _objectToUInt64Converter = UncheckedConverter<object, ulong>.Default;
             _formatProvider = CultureInfo.InvariantCulture;
         }
 
@@ -37,6 +39,9 @@ namespace Platform.Converters.Benchmarks
 
         [Benchmark]
         public ulong SystemConvertObjectToUInt64() => Convert.ToUInt64((object)2);
+
+        [Benchmark]
+        public ulong ConvertObjectToUInt64() => _objectToUInt64Converter.Convert(2);
 
         [Benchmark]
         public ulong SystemConvertToUInt64() => Convert.ToUInt64(2);

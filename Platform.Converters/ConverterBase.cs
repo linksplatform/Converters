@@ -14,12 +14,17 @@ namespace Platform.Converters
         public abstract TTarget Convert(TSource source);
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        protected static void ConvertAndUnbox(ILGenerator il)
+        protected static void ConvertFromObject(ILGenerator il)
         {
-            var typeContainer = typeof(NumericType<TTarget>).GetField(nameof(NumericType<TTarget>.Type), BindingFlags.Static | BindingFlags.Public);
-            il.Emit(OpCodes.Ldsfld, typeContainer);
-            il.Call(typeof(Convert).GetMethod(nameof(System.Convert.ChangeType), Types<object, Type>.Array));
-            il.UnboxValue(typeof(TTarget));
+            var returnDefault = il.DefineLabel();
+            il.Emit(OpCodes.Brfalse_S, returnDefault);
+            il.LoadArgument(1);
+            il.Emit(OpCodes.Castclass, typeof(IConvertible));
+            il.Emit(OpCodes.Ldnull);
+            il.Emit(OpCodes.Callvirt, GetMethodForConversionToTargetType());
+            il.Return();
+            il.MarkLabel(returnDefault);
+            LoadDefault(il, typeof(TTarget));
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -43,7 +48,7 @@ namespace Platform.Converters
                 il.LoadArgument(1);
                 if (typeof(TSource) == typeof(object) && typeof(TTarget) != typeof(object))
                 {
-                    ConvertAndUnbox(il);
+                    ConvertFromObject(il);
                 }
                 else if (typeof(TSource) != typeof(object) && typeof(TTarget) == typeof(object))
                 {
@@ -55,6 +60,111 @@ namespace Platform.Converters
                 }
                 il.Return();
             });
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        protected static MethodInfo GetMethodForConversionToTargetType()
+        {
+            var targetType = typeof(TTarget);
+            var convertibleType = typeof(IConvertible);
+            var typeParameters = Types<IFormatProvider>.Array;
+            if (targetType == typeof(bool))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToBoolean), typeParameters);
+            }
+            else if (targetType == typeof(byte))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToByte), typeParameters);
+            }
+            else if (targetType == typeof(char))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToChar), typeParameters);
+            }
+            else if (targetType == typeof(DateTime))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToDateTime), typeParameters);
+            }
+            else if (targetType == typeof(decimal))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToDecimal), typeParameters);
+            }
+            else if (targetType == typeof(double))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToDouble), typeParameters);
+            }
+            else if (targetType == typeof(short))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToInt16), typeParameters);
+            }
+            else if (targetType == typeof(int))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToInt32), typeParameters);
+            }
+            else if (targetType == typeof(long))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToInt64), typeParameters);
+            }
+            else if (targetType == typeof(sbyte))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToSByte), typeParameters);
+            }
+            else if (targetType == typeof(float))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToSingle), typeParameters);
+            }
+            else if (targetType == typeof(string))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToString), typeParameters);
+            }
+            else if (targetType == typeof(ushort))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToUInt16), typeParameters);
+            }
+            else if (targetType == typeof(uint))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToUInt32), typeParameters);
+            }
+            else if (targetType == typeof(ulong))
+            {
+                return convertibleType.GetMethod(nameof(IConvertible.ToUInt64), typeParameters);
+            }
+            else
+            {
+                throw new NotSupportedException();
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        protected static void LoadDefault(ILGenerator il, Type targetType)
+        {
+            if (targetType == typeof(string))
+            {
+                il.Emit(OpCodes.Ldsfld, targetType.GetField(nameof(string.Empty), BindingFlags.Static | BindingFlags.Public));
+            }
+            else if (targetType == typeof(DateTime))
+            {
+                il.Emit(OpCodes.Ldsfld, targetType.GetField(nameof(DateTime.MinValue), BindingFlags.Static | BindingFlags.Public));
+            }
+            else if (targetType == typeof(decimal))
+            {
+                il.Emit(OpCodes.Ldsfld, targetType.GetField(nameof(decimal.Zero), BindingFlags.Static | BindingFlags.Public));
+            }
+            else if (targetType == typeof(float))
+            {
+                il.LoadConstant(0.0F);
+            }
+            else if (targetType == typeof(double))
+            {
+                il.LoadConstant(0.0D);
+            }
+            else if (targetType == typeof(long) || targetType == typeof(ulong))
+            {
+                il.LoadConstant(0L);
+            }
+            else
+            {
+                il.LoadConstant(0);
+            }
         }
     }
 }
