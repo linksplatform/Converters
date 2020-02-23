@@ -43,7 +43,7 @@ This release is not backward compatible with the previous 0.0.8 release.</Packag
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Reflection" Version="0.3.2" />
+    <PackageReference Include="Platform.Reflection" Version="0.4.0" />
   </ItemGroup>
   
 </Project>
