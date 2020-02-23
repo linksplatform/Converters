@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Converters Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <VersionPrefix>0.2.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFrameworks>net472;netstandard2.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>Platform.Converters</AssemblyName>
@@ -24,14 +24,8 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Platform.Reflection dependency updated from 0.3.1 to 0.3.2.
-Obsolete To classes removed.
-New implementation of Conversion from an object that is faster than .NET version because method selection is done at compile-time and fewer additional checks performed.
-ConverterBase.ConvertAndUnbox method renamed to ConvertFromObject.
-Added GetMethodForConversionToTargetType and LoadDefault methods to ConverterBase abstract class.
-Refactoring, performance optimizations.
-
-This release is not backward compatible with the previous 0.0.8 release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Lowest supported version of .NET Framework is now 4.7.2.
+Platform.Reflection dependency updated from 0.3.2 to 0.4.0.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('net4')) AND '$(MSBuildRuntimeType)' == 'Core' AND '$(OS)' != 'Windows_NT'">
@@ -39,7 +33,7 @@ This release is not backward compatible with the previous 0.0.8 release.</Packag
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
