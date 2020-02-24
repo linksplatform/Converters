@@ -37,6 +37,12 @@ jobs:
         wget "$SCRIPTS_BASE_URL/toc.yml"
         wget "$SCRIPTS_BASE_URL/publish-csharp-docs.sh"
         bash ./publish-csharp-docs.sh
+    - name: Read CSharp project information
+      if: github.event_name == 'push'
+      run: |
+        export REPOSITORY_NAME=$(basename ${{ github.repository }})
+        wget "$SCRIPTS_BASE_URL/read_csharp_package_info.sh"
+        bash ./read_csharp_package_info.sh
     - name: Publish CSharp NuGet package
       if: github.event_name == 'push'
       run: |
