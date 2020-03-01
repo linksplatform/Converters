@@ -7,7 +7,7 @@ namespace Platform
 {
     namespace Converters
     {
-        template<typename TTarget, typename TSource>
+        template<typename TSource, typename TTarget>
         class Converter
         {
             public: static TTarget Convert(TSource source)

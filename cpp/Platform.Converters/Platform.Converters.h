@@ -5,6 +5,7 @@
 
 #include "Converter.h"
 #include "Convert.h"
+#include "ConvertTo.h"
 #include "StringConverter.h"
 
 #endif // Platform_Converters

@@ -29,7 +29,7 @@ namespace Platform
         constexpr bool has_to_string = is_detected<to_string_expression, T>::value;
 
         template<class TSource>
-        class Converter<std::string, TSource>
+        class Converter<TSource, std::string>
         {
             public: static std::string Convert(TSource source)
             {

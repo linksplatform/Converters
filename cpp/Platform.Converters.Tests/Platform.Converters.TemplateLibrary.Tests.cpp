@@ -45,14 +45,14 @@ namespace PlatformConvertersTemplateLibraryTests
 	public:
 		TEST_METHOD(ConversionsTest)
 		{
-			Assert::AreEqual(std::string("1"), Convert<std::string>(1));
-			Assert::AreEqual(std::string("1.49"), Convert<std::string>(1.49));
-			Assert::AreEqual(std::string("A"), Convert<std::string>(A()));
-			Assert::AreEqual(std::string("B"), Convert<std::string>(B()));
-			Assert::AreEqual(std::string("C"), Convert<std::string>(C()));
-			Assert::AreEqual(std::string("D"), Convert<std::string>(D()));
-			Assert::AreEqual(std::string(""), Convert<std::string>(std::string("")));
-			Assert::AreEqual(std::string(""), Convert<std::string>(""));
+			Assert::AreEqual(std::string("1"), Convert<int, std::string>(1));
+			Assert::AreEqual(std::string("1.49"), ConvertTo<std::string>(1.49));
+			Assert::AreEqual(std::string("A"), ConvertTo<std::string>(A()));
+			Assert::AreEqual(std::string("B"), ConvertTo<std::string>(B()));
+			Assert::AreEqual(std::string("C"), ConvertTo<std::string>(C()));
+			Assert::AreEqual(std::string("D"), ConvertTo<std::string>(D()));
+			Assert::AreEqual(std::string(""), ConvertTo<std::string>(std::string("")));
+			Assert::AreEqual(std::string(""), ConvertTo<std::string>(""));
 		}
 	};
 }

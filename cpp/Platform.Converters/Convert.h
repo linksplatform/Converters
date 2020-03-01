@@ -9,9 +9,9 @@ namespace Platform
 {
     namespace Converters
     {
-        template<typename TTarget, typename TSource> TTarget Convert(TSource source)
+        template<typename TSource, typename TTarget> TTarget Convert(TSource source)
         {
-            return Converter<TTarget, TSource>::Convert(source);
+            return Converter<TSource, TTarget>::Convert(source);
         }
     }
 }
