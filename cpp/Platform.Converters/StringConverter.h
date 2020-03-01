@@ -15,7 +15,7 @@ namespace Platform
         // 1 - detecting if T can be sent to an ostringstream
 
         template<typename T>
-        using ostringstream_expression = decltype(std::declval<std::ostringstream&>() << std::declval<T>());
+        using ostringstream_expression = decltype(std::declval<std::ostringstream &>() << std::declval<T>());
 
         template<typename T>
         constexpr bool has_ostringstream = is_detected<ostringstream_expression, T>::value;
@@ -75,7 +75,7 @@ namespace Platform
         {
             public: static std::string Convert(TSource *&source)
             {
-                return Converter<TSource*, std::string>::Convert(source);
+                return Converter<TSource *, std::string>::Convert(source);
             }
         };
 
