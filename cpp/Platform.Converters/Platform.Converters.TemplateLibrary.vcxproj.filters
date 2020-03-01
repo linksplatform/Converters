@@ -30,7 +30,7 @@
     <ClInclude Include="is_detected.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ConvertTo.h">
+    <ClInclude Include="To.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

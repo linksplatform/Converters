@@ -140,7 +140,7 @@
   <ItemGroup>
     <ClInclude Include="Convert.h" />
     <ClInclude Include="Converter.h" />
-    <ClInclude Include="ConvertTo.h" />
+    <ClInclude Include="To.h" />
     <ClInclude Include="is_detected.h" />
     <ClInclude Include="Platform.Converters.h" />
     <ClInclude Include="StringConverter.h" />
