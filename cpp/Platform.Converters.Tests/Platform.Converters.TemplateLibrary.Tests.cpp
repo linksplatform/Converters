@@ -51,9 +51,10 @@ namespace PlatformConvertersTemplateLibraryTests
 		TEST_METHOD(ConversionsTest)
 		{
 			A a;
-			A* aPointer = &a;
+			A &aReference = a;
+			A *aPointer = &a;
 			X x;
-			X* xPointer = &x;
+			X *xPointer = &x;
 
 			Assert::AreEqual(std::string("1"), Convert<int, std::string>(1));
 			Assert::AreEqual(std::string("1.49"), ConvertTo<std::string>(1.49));
@@ -72,11 +73,15 @@ namespace PlatformConvertersTemplateLibraryTests
 			Assert::IsTrue(pointerToXString.starts_with("pointer <"));
 			Assert::IsTrue(pointerToXString.ends_with("> to <instance of class X>"));
 
-			Assert::AreEqual(std::string("null pointer"), Convert<X*, std::string>(nullptr));
+			Assert::AreEqual(std::string("null pointer"), Convert<X *, std::string>(nullptr));
 
 			Assert::AreEqual(std::string("null pointer"), ConvertTo<std::string>(nullptr));
 
-			Assert::AreEqual(std::string("void pointer <10>"), ConvertTo<std::string>((void*)10));
+			Assert::AreEqual(std::string("A"), Convert<A &, std::string>(a));
+
+			Assert::AreEqual(std::string("A"), ConvertTo<std::string>(aReference));
+
+			Assert::AreEqual(std::string("void pointer <10>"), ConvertTo<std::string>((void *)10));
 		}
 	};
 }

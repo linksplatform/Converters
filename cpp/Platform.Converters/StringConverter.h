@@ -71,9 +71,32 @@ namespace Platform
         };
 
         template<class TSource>
-        class Converter<TSource*, std::string>
+        class Converter<TSource *&, std::string>
         {
-            public: static std::string Convert(TSource* source)
+            public: static std::string Convert(TSource *&source)
+            {
+                if (source == nullptr)
+                {
+                    return "null pointer";
+                }
+                else
+                {
+                    if constexpr (std::is_void<TSource>::value)
+                    {
+                        return std::string("void pointer <").append(std::to_string((size_t)source)).append(1, '>');
+                    }
+                    else
+                    {
+                        return std::string("pointer <").append(std::to_string((size_t)source)).append("> to <").append(Converter<TSource, std::string>::Convert(*source)).append(1, '>');
+                    }
+                }
+            }
+        };
+
+        template<class TSource>
+        class Converter<TSource *, std::string>
+        {
+            public: static std::string Convert(TSource *source)
             {
                 if (source == nullptr)
                 {
