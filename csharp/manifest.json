@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "E8IjAUYbCuUD9Vw4AWp+qQ=="
+          "hash": "wJ3YHhREmM9GTP5jdOQQ/A=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.CachingConverterDecorator-2.html",
-          "hash": "G37nJPwFBsh4VMdmgG841A=="
+          "hash": "4eQhEu8HQ7HxCPHq6Ond9w=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.CheckedConverter-2.html",
-          "hash": "jcy+dD8XANAE1alMbqavAQ=="
+          "hash": "08EvVLl6L8H0+ICRgk5q/A=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.ConverterBase-2.html",
-          "hash": "YblmMymzUxOQlZ8B8M3OIw=="
+          "hash": "pgWjllCkxFc1LmKdDPtJvA=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.IConverter-1.html",
-          "hash": "8GRqW0YG0YHI0e8nC8EU3w=="
+          "hash": "9W5WMaht41lbY9V0LuMGTw=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.IConverter-2.html",
-          "hash": "UTYf7i5h2VXe4SCMzGk1kQ=="
+          "hash": "0mih5HYEH1jtAk0Mxm6XsQ=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.UncheckedConverter-2.html",
-          "hash": "QjekYk77NWSeIO+mNhHv0A=="
+          "hash": "U4+C2zaKWmUx2IOWYuRA6A=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.UncheckedSignExtendingConverter-2.html",
-          "hash": "Gx0xDj7Hv2FXEJZWBkYwXw=="
+          "hash": "YskTJ8lCLAL1U7RDHooGlw=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.html",
-          "hash": "JA1xzlmh2oqV7tfFUD7/MQ=="
+          "hash": "BqBbIcNK9wpqmRVNVMNh7w=="
         }
       },
       "is_incremental": false,
