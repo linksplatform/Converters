@@ -35,8 +35,8 @@ namespace Platform
         {
             nonesuch() = delete;
             ~nonesuch() = delete;
-            nonesuch(nonesuch const&) = delete;
-            void operator=(nonesuch const&) = delete;
+            nonesuch(nonesuch const &) = delete;
+            void operator=(nonesuch const &) = delete;
         };
 
         template <template< typename... > class Check, typename... Args>

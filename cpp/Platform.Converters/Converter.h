@@ -10,7 +10,8 @@ namespace Platform
         template<typename TSource, typename TTarget>
         class Converter
         {
-            public: static TTarget Convert(TSource source)
+        public:
+            static TTarget Convert(TSource source)
             {
                 return (TTarget)source;
             }

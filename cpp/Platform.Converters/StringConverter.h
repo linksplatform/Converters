@@ -39,7 +39,8 @@ namespace Platform
         template<class TSource>
         class Converter<TSource, std::string>
         {
-            public: static std::string Convert(TSource source)
+        public:
+            static std::string Convert(TSource source)
             {
                 if constexpr (std::is_same<std::nullptr_t, TSource>::value)
                 {
@@ -73,7 +74,8 @@ namespace Platform
         template<class TSource>
         class Converter<TSource *&, std::string>
         {
-            public: static std::string Convert(TSource *&source)
+        public:
+            static std::string Convert(TSource *&source)
             {
                 return Converter<TSource *, std::string>::Convert(source);
             }
@@ -82,7 +84,8 @@ namespace Platform
         template<class TSource>
         class Converter<TSource *, std::string>
         {
-            public: static std::string Convert(TSource *source)
+        public:
+            static std::string Convert(TSource *source)
             {
                 if (source == nullptr)
                 {
