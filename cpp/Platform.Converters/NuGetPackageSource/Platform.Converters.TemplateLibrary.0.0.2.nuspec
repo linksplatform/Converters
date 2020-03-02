@@ -5,8 +5,8 @@
     <title>LinksPlatform's Platform.Converters Template Library</title>
     <summary>LinksPlatform's Platform.Converters is a Template Library what contains abstract class templates.</summary>
     <description>LinksPlatform's Platform.Converters is a Template Library what contains set of C++ abstract class templates. Use Platform.Converters.h file to include the library.</description>
-    <releaseNotes>Initial release.</releaseNotes>
-    <version>0.0.1</version>
+    <releaseNotes>License fix.</releaseNotes>
+    <version>0.0.2</version>
     <authors>Konstantin Diachenko</authors>
     <owners>Konstantin Diachenko</owners>
     <copyright>Konstantin Diachenko</copyright>
@@ -14,8 +14,8 @@
     <repository type="git" url="https://github.com/linksplatform/Converters" />
     <iconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</iconUrl>
     <tags>C++ Native Converters</tags>
-    <license type="expression">Unlicense</license>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
   </metadata>
   <files>
     <file src="build\native\Platform.Converters.TemplateLibrary.targets" target="build\native\Platform.Converters.TemplateLibrary.targets" />
