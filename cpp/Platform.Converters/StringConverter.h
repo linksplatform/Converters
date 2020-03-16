@@ -107,4 +107,4 @@ namespace Platform
     }
 }
 
-#endif // Platform_Converters_StringConverter
+#endif

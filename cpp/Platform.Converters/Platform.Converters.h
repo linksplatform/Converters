@@ -8,4 +8,4 @@
 #include "To.h"
 #include "StringConverter.h"
 
-#endif // Platform_Converters
+#endif

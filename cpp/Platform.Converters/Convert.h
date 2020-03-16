@@ -16,4 +16,4 @@ namespace Platform
     }
 }
 
-#endif // Platform_Converters_Convert
+#endif
