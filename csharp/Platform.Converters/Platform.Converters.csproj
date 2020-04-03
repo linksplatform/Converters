@@ -37,7 +37,7 @@ Platform.Reflection dependency updated from 0.3.2 to 0.4.0.</PackageReleaseNotes
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Platform.Reflection" Version="0.4.0" />
+    <PackageReference Include="Platform.Reflection" Version="0.4.1" />
   </ItemGroup>
   
 </Project>
