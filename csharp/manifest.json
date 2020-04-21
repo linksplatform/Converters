@@ -18,115 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "README.html",
-          "hash": "a3S4MJmozDVAAh6m7sqd0w=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.CachingConverterDecorator-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.CachingConverterDecorator-2.html",
-          "hash": "y8sUU1SYYl9eOUG8QF8XEA=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.CheckedConverter-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.CheckedConverter-2.html",
-          "hash": "aGDfh3+C0JhcfFhnie1HAw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.ConverterBase-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.ConverterBase-2.html",
-          "hash": "7r92GWd8WlnkGmx/skaNqw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.IConverter-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.IConverter-1.html",
-          "hash": "rEiqcIufJRWddUnGHMHF9A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.IConverter-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.IConverter-2.html",
-          "hash": "a8jCmMhluMjMN1z0w1NpSQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.UncheckedConverter-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.UncheckedConverter-2.html",
-          "hash": "rhT8e++AaUIaYtfE49aYJw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.UncheckedSignExtendingConverter-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.UncheckedSignExtendingConverter-2.html",
-          "hash": "L9dKesrovNiPZ5XJF2tHQg=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "obj/api/Platform.Converters.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Platform.Converters.html",
-          "hash": "JCEZtN2tRoa1oh/Zy7iulQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "obj/api/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "2eKxPPCeM/EpAhuLYrQjvQ=="
+          "hash": "+GyaN3bVBzq4gIHAY6pTrg=="
         }
       },
       "is_incremental": false,
@@ -141,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "OUxvxk809ZdbDivDWngzBg=="
+          "hash": "nei4rppA0/VK5bm7Hn068g=="
         }
       },
       "is_incremental": false,
@@ -163,12 +55,6 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 8,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
