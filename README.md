@@ -10,14 +10,14 @@
 
 LinksPlatform's Platform.Converters Class Library.
 
-Namespace: [Platform.Converters](https://linksplatform.github.io/Converters/api/Platform.Converters.html)
+Namespace: [Platform.Converters](https://linksplatform.github.io/Converters/csharp/api/Platform.Converters.html)
 
 Forked from: [Konard/LinksPlatform/Platform/Platform.Helpers](https://github.com/Konard/LinksPlatform/tree/1a9a968bea64460cfbf0f075b0336bc2179e295c/Platform/Platform.Helpers)
 
 NuGet package: [Platform.Converters](https://www.nuget.org/packages/Platform.Converters)
 
 ## [Documentation](https://linksplatform.github.io/Converters)
-[PDF file](https://linksplatform.github.io/Converters/Platform.Converters.pdf) with code for e-readers.
+[PDF file](https://linksplatform.github.io/Converters/csharp/Platform.Converters.pdf) with code for e-readers.
 
 ## Depend on
 *   [Platform.Reflection](https://github.com/linksplatform/Reflection)
