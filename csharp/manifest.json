@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.CachingConverterDecorator-2.html",
-          "hash": "D0NIpeTCelle52AXs8NkWg=="
+          "hash": "PgxXCqC7wq3FT14ZZCXT2Q=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.CheckedConverter-2.html",
-          "hash": "gxpilOjJzO4BKNA+/bqkJQ=="
+          "hash": "MaxGmm6XHay7T244SmdDcQ=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.ConverterBase-2.html",
-          "hash": "XTXKSNyfETDWPshgy6Bfvw=="
+          "hash": "msFfSYbUc6dQCK3oL7vGNQ=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.IConverter-1.html",
-          "hash": "Y4g4qxa/psXcALj3YF8xfA=="
+          "hash": "MBGMeOT4M8X3XM5T4vLdhg=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.IConverter-2.html",
-          "hash": "qClVo2B1zYEdZyNUNG8frw=="
+          "hash": "QUxMmrjFoQ56fAmw+k83Ew=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.UncheckedConverter-2.html",
-          "hash": "0WX12OcK1JW68NyKNBj3/A=="
+          "hash": "bP3JNL+bbc4hUJI2swIQJA=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.UncheckedSignExtendingConverter-2.html",
-          "hash": "bpDquxEkwFcY2ivS50WWyQ=="
+          "hash": "5iE/622qEqEWpJv8IjJDlA=="
         }
       },
       "is_incremental": false,
