@@ -9,8 +9,8 @@ using Platform.Reflection;
 namespace Platform.Converters
 {   
     /// <summary>
-    /// <para>Defines a converter between two types (TSource and TTarget).</para>
-    /// <para>Определяет конвертер между двумя типами (исходным TSource и целевым TTarget).</para>
+    /// <para>Provides a base implementation for IConverter interface with the basic logic necessary for converter between two types (TSource and TTarget).</para>
+    /// <para>Предоставляет базовую реализацию для интерфейса IConverter с основной логикой необходимой для конвертера между двумя типами (исходным TSource и целевым TTarget).</para>
     /// </summary>
     /// <typeparam name="TSource"><para>Source type of conversion.</para><para>Исходный тип конверсии.</para></typeparam>
     /// <typeparam name="TTarget"><para>Target type of conversion.</para><para>Целевой тип конверсии.</para></typeparam>
