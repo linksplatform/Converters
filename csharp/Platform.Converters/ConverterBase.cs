@@ -25,6 +25,12 @@ namespace Platform.Converters
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public abstract TTarget Convert(TSource source);
         
+        /// <summary>
+        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
+        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// </summary>
+        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
+        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static void ConvertFromObject(ILGenerator il)
         {
@@ -39,9 +45,21 @@ namespace Platform.Converters
             LoadDefault(il, typeof(TTarget));
         }
 
+        /// <summary>
+        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
+        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// </summary>
+        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
+        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static string GetNewName() => Guid.NewGuid().ToString("N");
 
+        /// <summary>
+        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
+        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// </summary>
+        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
+        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static TypeBuilder CreateTypeInheritedFrom<TBaseClass>()
         {
@@ -52,6 +70,12 @@ namespace Platform.Converters
             return type;
         }
 
+        /// <summary>
+        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
+        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// </summary>
+        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
+        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static void EmitConvertMethod(TypeBuilder typeBuilder, Action<ILGenerator> emitConversion)
         {
@@ -74,6 +98,12 @@ namespace Platform.Converters
             });
         }
 
+        /// <summary>
+        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
+        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// </summary>
+        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
+        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static MethodInfo GetMethodForConversionToTargetType()
         {
@@ -146,6 +176,12 @@ namespace Platform.Converters
             }
         }
 
+        /// <summary>
+        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
+        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// </summary>
+        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
+        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static void LoadDefault(ILGenerator il, Type targetType)
         {
