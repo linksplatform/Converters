@@ -21,7 +21,7 @@ namespace Platform.Converters
         /// <para>Конвертирует значение типа <typeparamref name="TSource"/> в значение типа <typeparamref name="TTarget"/>.</para>
         /// </summary>
         /// <param name="source"><para>The <typeparamref name=="TSource"/> type value.</para><para>Значение типа <typeparamref name="TSource"/>.</para></param>
-        /// <returns><para>The value is converted to the <typeparamref name="TTarget"/> type.</para><para>Значение конвертированное в тип <typeparamref name="TTarget"/>.</para></returns>
+        /// <returns><para>The converted value of the <typeparamref name="TTarget"/> type.</para><para>Значение конвертированное в тип <typeparamref name="TTarget"/>.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public abstract TTarget Convert(TSource source);
         
