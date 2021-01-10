@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.CachingConverterDecorator-2.html",
-          "hash": "raLo4PqdB6tTVI5ZkhmTHQ=="
+          "hash": "Lde6JEoJHdjE+p9O5iu3oQ=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.CheckedConverter-2.html",
-          "hash": "b1f4VwFZUdBGgMIzB3rd7g=="
+          "hash": "mPu0+kYNi1LCOkzUbBO8kA=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.ConverterBase-2.html",
-          "hash": "KE+Rj7GDzlA9jLtn82Z08w=="
+          "hash": "GZ1+ki9prJOJUSm9Yq2B7Q=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.IConverter-1.html",
-          "hash": "HTZC4iL3ETIpizih/k9gdw=="
+          "hash": "Qswe2VbTgmxgZKCB9vgx3Q=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.IConverter-2.html",
-          "hash": "woHfZ1lZ/c2RpMT8FBe+ZQ=="
+          "hash": "iO7hy0pujEvfUxJ9xvREBw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.UncheckedConverter-2.html",
-          "hash": "2+KNZUpS74rXqYWeQIw8sw=="
+          "hash": "LpO4STrMZoeytqzfD4gB7g=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.UncheckedSignExtendingConverter-2.html",
-          "hash": "+SjROGJKoghuKS9WrBIaIA=="
+          "hash": "KNojTNJ3XXkHO3Um3OrLng=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Platform.Converters.html",
-          "hash": "9cDs92LlYpSCAcUITUErCw=="
+          "hash": "G9WQv16J+RAConivZzfWWw=="
         }
       },
       "is_incremental": false,
