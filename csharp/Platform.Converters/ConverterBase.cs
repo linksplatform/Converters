@@ -10,18 +10,18 @@ namespace Platform.Converters
 {   
     /// <summary>
     /// <para>Provides a base implementation for IConverter interface with the basic logic necessary for converter between two types (TSource and TTarget).</para>
-    /// <para>Предоставляет базовую реализацию для интерфейса IConverter с основной логикой необходимой для конвертера между двумя типами (исходным TSource и целевым TTarget).</para>
+    /// <para>Представляет базовую реализацию для интерфейса IConverter с основной логикой необходимой для конвертера между двумя типами (исходным TSource и целевым TTarget).</para>
     /// </summary>
     /// <typeparam name="TSource"><para>Source type of conversion.</para><para>Исходный тип конверсии.</para></typeparam>
     /// <typeparam name="TTarget"><para>Target type of conversion.</para><para>Целевой тип конверсии.</para></typeparam>
     public abstract class ConverterBase<TSource, TTarget> : IConverter<TSource, TTarget>
     {
         /// <summary>
-        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
-        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// <para>Converts the value of the <see cref="TSource"/> type to the value of the <see cref="TTarget"/> type.</para>
+        /// <para>Конвертирует значение типа <see cref="TSource"/> в значение типа <see cref="TTarget"/>.</para>
         /// </summary>
-        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
-        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
+        /// <param name="source"><para>The <see cref="TSource"/> type value.</para><para>Значение типа <see cref="TSource"/>.</para></param>
+        /// <returns><para>The value is converted to the <see cref="TTarget"/> type.</para><para>Значение конвертированное в тип <see cref="TTarget"/>.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public abstract TTarget Convert(TSource source);
         
