@@ -9,8 +9,8 @@ using Platform.Reflection;
 namespace Platform.Converters
 {   
     /// <summary>
-    /// <para>Represents a base implementation for IConverter interface with the basic logic necessary for value converter from the <see cref="TSource"/> type to the <see cref="TTarget"/> type.</para>
-    /// <para>Представляет базовую реализацию для интерфейса IConverter с основной логикой необходимой для конвертера значений из типа <see cref="TSource"/> в тип <sea cref="TTarget"/>.</para>
+    /// <para>Represents a base implementation for IConverter interface with the basic logic necessary for value converter from the <typeparamref name="TSource"/> type to the <typeparamref name="TTarget"/> type.</para>
+    /// <para>Представляет базовую реализацию для интерфейса IConverter с основной логикой необходимой для конвертера значений из типа <typeparamref name="TSource"/> в тип <typeparamref name="TTarget"/>.</para>
     /// </summary>
     /// <typeparam name="TSource"><para>Source type of conversion.</para><para>Исходный тип конверсии.</para></typeparam>
     /// <typeparam name="TTarget"><para>Target type of conversion.</para><para>Целевой тип конверсии.</para></typeparam>
