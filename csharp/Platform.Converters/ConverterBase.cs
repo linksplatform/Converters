@@ -30,7 +30,6 @@ namespace Platform.Converters
         /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
         /// </summary>
         /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
-        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static void ConvertFromObject(ILGenerator il)
         {
