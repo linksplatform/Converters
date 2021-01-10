@@ -26,8 +26,8 @@ namespace Platform.Converters
         public abstract TTarget Convert(TSource source);
         
         /// <summary>
-        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
-        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// <para>Generates a sequence of instructions using <see cref="ILGenerator"/> that converts a value of type <see cref="System.Object"/> to a value of type <typeparamref name="TTarget"/>.</para>
+        /// <para>Генерирует последовательность инструкций при помощи <see cref="ILGenerator"/> выполняющую преобразование значения типа <see cref="System.Object"/> к значению типа <typeparamref name="TTarget"/>.</para>
         /// </summary>
         /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
