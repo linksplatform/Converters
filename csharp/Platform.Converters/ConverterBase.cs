@@ -45,11 +45,10 @@ namespace Platform.Converters
         }
 
         /// <summary>
-        /// <para>Converts the value of the source type (TSource) to the value of the target type.</para>
-        /// <para>Конвертирует значение исходного типа (TSource) в значение целевого типа.</para>
+        /// <para>Gets a new unique name of an assembly.</para>
+        /// <para>Возвращает новое уникальное имя сборки.</para>
         /// </summary>
-        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
-        /// <returns><para>The value is converted to the target type (TTarget).</para><para>Значение ковертированное в целевой тип (TTarget).</para></returns>
+        /// <returns><para>A new unique name of an assembly.</para><para>Новое уникальное имя сборки.</para></returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static string GetNewName() => Guid.NewGuid().ToString("N");
 
