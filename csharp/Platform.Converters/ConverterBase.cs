@@ -29,7 +29,7 @@ namespace Platform.Converters
         /// <para>Generates a sequence of instructions using <see cref="ILGenerator"/> that converts a value of type <see cref="System.Object"/> to a value of type <typeparamref name="TTarget"/>.</para>
         /// <para>Генерирует последовательность инструкций при помощи <see cref="ILGenerator"/> выполняющую преобразование значения типа <see cref="System.Object"/> к значению типа <typeparamref name="TTarget"/>.</para>
         /// </summary>
-        /// <param name="source"><para>The source type value (TSource).</para><para>Значение исходного типа (TSource).</para></param>
+        /// <param name="il"><para>An <see cref="ILGenerator"/> instance.</para><para>Экземпляр <see cref="ILGenerator"/>.</para></param>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         protected static void ConvertFromObject(ILGenerator il)
         {
