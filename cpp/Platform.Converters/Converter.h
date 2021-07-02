@@ -1,22 +1,13 @@
 #pragma once
 
-#ifndef Platform_Converters_Converter
-#define Platform_Converters_Converter
-
-namespace Platform
+namespace Platform::Converters
 {
-    namespace Converters
+    template<typename TSource, typename TTarget>
+    struct Converter
     {
-        template<typename TSource, typename TTarget>
-        class Converter
+        static TTarget Convert(const TSource& source)
         {
-        public:
-            static TTarget Convert(TSource source)
-            {
-                return (TTarget)source;
-            }
-        };
-    }
+            return (TTarget)source;
+        }
+    };
 }
-
-#endif

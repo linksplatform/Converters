@@ -5,14 +5,11 @@
 
 #include "Converter.h"
 
-namespace Platform
+namespace Platform::Converters
 {
-    namespace Converters
+    template <typename TSource, typename TTarget> TTarget Convert(const TSource& source)
     {
-        template<typename TSource, typename TTarget> TTarget Convert(TSource source)
-        {
-            return Converter<TSource, TTarget>::Convert(source);
-        }
+        return Converter<std::remove_cvref_t<decltype(source)>, TTarget>::Convert(source);
     }
 }
 

@@ -1,110 +1,80 @@
 #pragma once
 
-#ifndef Platform_Converters_StringConverter
-#define Platform_Converters_StringConverter
-
 #include <iostream>
 #include <sstream>
 #include "Converter.h"
-#include "is_detected.h"
 
-namespace Platform
+namespace Platform::Converters
 {
-    namespace Converters
+    template<typename TSource>
+    std::string to_string(const TSource& source)
     {
-        // 1 - detecting if T can be sent to an ostringstream
-
-        template<typename T>
-        using ostringstream_expression = decltype(std::declval<std::ostringstream &>() << std::declval<T>());
-
-        template<typename T>
-        constexpr bool has_ostringstream = is_detected<ostringstream_expression, T>::value;
-
-        // 2 - detecting if to_string is valid on T
-
-        template<typename T>
-        using to_string_expression = decltype(to_string(std::declval<T>()));
-
-        template<typename T>
-        constexpr bool has_to_string = is_detected<to_string_expression, T>::value;
-
-        // 3 - detecting if std::to_string is valid on T
-
-        template<typename T>
-        using std_to_string_expression = decltype(std::to_string(std::declval<T>()));
-
-        template<typename T>
-        constexpr bool has_std_to_string = is_detected<std_to_string_expression, T>::value;
-
-        template<class TSource>
-        class Converter<TSource, std::string>
+        static constexpr auto to_hex_pointer = [](auto* self)
         {
-        public:
-            static std::string Convert(TSource source)
+            std::ostringstream stream;
+            stream << self;
+            return stream.str();
+        };
+
+        if constexpr (std::same_as<std::nullptr_t, TSource>)
+        {
+            return "null pointer";
+        }
+
+        if constexpr (std::is_pointer_v<TSource>)
+        {
+            if (source == nullptr)
             {
-                if constexpr (std::is_same<std::nullptr_t, TSource>::value)
+                return "null pointer";
+            }
+            else
+            {
+                if constexpr (std::same_as<TSource, void*>)
                 {
-                    return "null pointer";
-                }
-                else if constexpr (std::is_convertible<TSource, std::string>::value)
-                {
-                    return (std::string)source;
-                }
-                else if constexpr (has_ostringstream<TSource>)
-                {
-                    std::ostringstream oss;
-                    oss << source;
-                    return oss.str();
-                }
-                else if constexpr (has_to_string<TSource>)
-                {
-                    return to_string(source);
-                }
-                else if constexpr (has_std_to_string<TSource>)
-                {
-                    return std::to_string(source);
+                    return std::string("void pointer <")
+                        .append(to_hex_pointer(source))
+                        .append(1, '>');
                 }
                 else
                 {
-                    return std::string("instance of ").append(typeid(TSource).name());
+                    return std::string("pointer <")
+                        .append(to_hex_pointer(source))
+                        .append("> to <")
+                        .append(to_string(*source))
+                        .append(1, '>');
                 }
             }
-        };
+        }
 
-        template<class TSource>
-        class Converter<TSource *&, std::string>
+        if constexpr (requires { static_cast<std::string>(source); })
         {
-        public:
-            static std::string Convert(TSource *&source)
-            {
-                return Converter<TSource *, std::string>::Convert(source);
-            }
-        };
+            return static_cast<std::string>(source);
+        }
 
-        template<class TSource>
-        class Converter<TSource *, std::string>
+        if constexpr (requires { std::to_string(source); })
         {
-        public:
-            static std::string Convert(TSource *source)
-            {
-                if (source == nullptr)
-                {
-                    return "null pointer";
-                }
-                else
-                {
-                    if constexpr (std::is_void<TSource>::value)
-                    {
-                        return std::string("void pointer <").append(std::to_string((size_t)source)).append(1, '>');
-                    }
-                    else
-                    {
-                        return std::string("pointer <").append(std::to_string((size_t)source)).append("> to <").append(Converter<TSource, std::string>::Convert(*source)).append(1, '>');
-                    }
-                }
-            }
-        };
+            return std::to_string(source);
+        }
+
+        if constexpr (requires(std::ostream& stream) { stream << source; })
+        {
+            std::ostringstream stream;
+            stream << source;
+            return stream.str();
+        }
+
+        // TODO maybe use demangled name
+        return std::string("instance of ")
+            .append(typeid(TSource).name());
     }
-}
 
-#endif
+
+    template<class TSource>
+    struct Converter<TSource, std::string>
+    {
+        static std::string Convert(const TSource& source)
+        {
+            return to_string(std::forward<decltype(source)>(source));
+        }
+    };
+}
