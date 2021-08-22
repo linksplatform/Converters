@@ -1,4 +1,4 @@
-﻿namespace Platform.Converters
+namespace Platform.Converters
 {
     /// <summary>
     /// <para>Defines a value converter from the <typeparamref name="TSource"/> type to the <typeparamref name="TTarget"/> type.</para>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using Platform.Reflection;
 
@@ -6,14 +6,37 @@ using Platform.Reflection;
 
 namespace Platform.Converters
 {
+    /// <summary>
+    /// <para>
+    /// Represents the checked converter.
+    /// </para>
+    /// <para></para>
+    /// </summary>
+    /// <seealso cref="ConverterBase{TSource, TTarget}"/>
     public abstract class CheckedConverter<TSource, TTarget> : ConverterBase<TSource, TTarget>
     {
+        /// <summary>
+        /// <para>
+        /// Gets the default value.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         public static CheckedConverter<TSource, TTarget> Default
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get;
         } = CompileCheckedConverter();
 
+        /// <summary>
+        /// <para>
+        /// Compiles the checked converter.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>A checked converter of t source and t target</para>
+        /// <para></para>
+        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static CheckedConverter<TSource, TTarget> CompileCheckedConverter()
         {

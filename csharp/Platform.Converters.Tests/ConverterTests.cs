@@ -3,8 +3,20 @@ using Xunit;
 
 namespace Platform.Converters.Tests
 {
+    /// <summary>
+    /// <para>
+    /// Represents the converter tests.
+    /// </para>
+    /// <para></para>
+    /// </summary>
     public static class ConverterTests
     {
+        /// <summary>
+        /// <para>
+        /// Tests that same type test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void SameTypeTest()
         {
@@ -14,6 +26,12 @@ namespace Platform.Converters.Tests
             Assert.Equal(2UL, result);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that int 32 to u int 64 test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void Int32ToUInt64Test()
         {
@@ -23,6 +41,12 @@ namespace Platform.Converters.Tests
             Assert.Equal(2UL, result);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that sign extension test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void SignExtensionTest()
         {
@@ -32,6 +56,12 @@ namespace Platform.Converters.Tests
             Assert.Equal(128L, result);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests that object test.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         [Fact]
         public static void ObjectTest()
         {
@@ -52,6 +82,20 @@ namespace Platform.Converters.Tests
             TestObjectConversion(true);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests the object conversion using the specified value.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <typeparam name="T">
+        /// <para>The .</para>
+        /// <para></para>
+        /// </typeparam>
+        /// <param name="value">
+        /// <para>The value.</para>
+        /// <para></para>
+        /// </param>
         private static void TestObjectConversion<T>(T value) => Assert.Equal(value, UncheckedConverter<object, T>.Default.Convert(value));
     }
 }

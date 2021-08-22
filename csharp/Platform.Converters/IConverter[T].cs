@@ -1,4 +1,4 @@
-﻿namespace Platform.Converters
+namespace Platform.Converters
 {
     /// <summary>
     /// <para>Defines a converter between two values of the same <typeparamref name="T"/> type.</para>
