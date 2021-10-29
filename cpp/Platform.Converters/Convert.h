@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef Platform_Converters_Convert
-#define Platform_Converters_Convert
-
 #include "Converter.h"
 
 namespace Platform::Converters
@@ -12,5 +9,3 @@ namespace Platform::Converters
         return Converter<std::remove_cvref_t<decltype(source)>, TTarget>::Convert(source);
     }
 }
-
-#endif
