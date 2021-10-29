@@ -82,6 +82,20 @@ namespace Platform.Converters.Tests
             TestObjectConversion(true);
         }
 
+        /// <summary>
+        /// <para>
+        /// Tests the object conversion using the specified value.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <typeparam name="T">
+        /// <para>The .</para>
+        /// <para></para>
+        /// </typeparam>
+        /// <param name="value">
+        /// <para>The value.</para>
+        /// <para></para>
+        /// </param>
         private static void TestObjectConversion<T>(T value) => Assert.Equal(value, UncheckedConverter<object, T>.Default.Convert(value));
     }
 }

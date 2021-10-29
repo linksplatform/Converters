@@ -15,7 +15,19 @@ namespace Platform.Converters
     /// <seealso cref="IConverter{TSource, TTarget}"/>
     public class CachingConverterDecorator<TSource, TTarget> : IConverter<TSource, TTarget>
     {
+        /// <summary>
+        /// <para>
+        /// The base converter.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly IConverter<TSource, TTarget> _baseConverter;
+        /// <summary>
+        /// <para>
+        /// The cache.
+        /// </para>
+        /// <para></para>
+        /// </summary>
         private readonly IDictionary<TSource, TTarget> _cache;
 
         /// <summary>
