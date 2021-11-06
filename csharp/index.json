@@ -42,6 +42,6 @@
   "README.html": {
     "href": "README.html",
     "title": "Converters | LinksPlatform's Platform.Converters Library",
-    "keywords": "C# C++ Converters LinksPlatform's Platform.Converters Class Library. Namespace: Platform.Converters Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Converters Documentation PDF file with code for e-readers. Depend on Platform.Reflection Dependent libraries Platform.Numbers"
+    "keywords": "C++ C# Converters LinksPlatform's Platform.Converters Class Library. Namespace: Platform.Converters Forked from: Konard/LinksPlatform/Platform/Platform.Helpers NuGet package: Platform.Converters Documentation PDF file with code for e-readers. Depend on Platform.Reflection Dependent libraries Platform.Numbers"
   }
 }
