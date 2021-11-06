@@ -2,9 +2,9 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/1dd688d4d2a74876bed7772e13a835d2)](https://app.codacy.com/gh/linksplatform/Converters?utm_source=github.com&utm_medium=referral&utm_content=linksplatform/Converters&utm_campaign=Badge_Grade_Settings)
 [![CodeFactor](https://www.codefactor.io/repository/github/linksplatform/converters/badge)](https://www.codefactor.io/repository/github/linksplatform/converters)
 
-| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Converters)](https://www.nuget.org/packages/Platform.Converters) | C# |
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Converters.TemplateLibrary)](https://www.nuget.org/packages/Platform.Converters.TemplateLibrary) [![ConanCenter package](https://repology.org/badge/version-for-repo/conancenter/platform.converters.svg)](https://conan.io/center/platform.converters) | __C++__  |
 |-|-|
-| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Converters.TemplateLibrary)](https://www.nuget.org/packages/Platform.Converters.TemplateLibrary)  | __C++__  |
+| [![NuGet Version and Downloads count](https://buildstats.info/nuget/Platform.Converters)](https://www.nuget.org/packages/Platform.Converters) | C# |
 
 # [Converters](https://github.com/linksplatform/Converters)
 
