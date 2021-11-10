@@ -1,15 +1,32 @@
-﻿namespace Platform::Converters
+#pragma once
+
+#include <functional>
+#include <memory>
+#include <unordered_map>
+
+namespace Platform::Converters
 {
-    template <typename ...> class CachingConverterDecorator;
-    template <typename TSource, typename TTarget> class CachingConverterDecorator<TSource, TTarget> : public IConverter<TSource, TTarget>
+    template <typename ...> class Cached;
+    template <typename TSource, typename TTarget> class Cached<TSource, TTarget>
     {
-        private: readonly IConverter<TSource, TTarget> *_baseConverter;
-        private: readonly IDictionary<TSource, TTarget> *_cache;
+        private: std::unique_ptr<std::function<TTarget(TSource)>> _baseConverter;
+        private: std::unordered_map<TSource, TTarget> _cache;
 
-        public: CachingConverterDecorator(IConverter<TSource, TTarget> &baseConverter, IDictionary<TSource, TTarget> &cache) { (_baseConverter, _cache) = (baseConverter, cache); }
+        public: Cached(std::function<TTarget(TSource)>& baseConverter, std::unordered_map<TSource, TTarget>& cache): _baseConverter(baseConverter), _cache(cache) {}
 
-        public: CachingConverterDecorator(IConverter<TSource, TTarget> &baseConverter) : this(baseConverter, Dictionary<TSource, TTarget>()) { }
+        public: Cached(std::function<TTarget(TSource)>& baseConverter): _baseConverter(baseConverter), _cache() {}
 
-        public: TTarget Convert(TSource source) { return _cache.GetOrAdd(source, _baseConverter.Convert); }
+        public: TTarget operator()(const TSource& source)
+        {
+            auto cursor = _cache.find(source);
+            if (cursor != _cache.end())
+            {
+                return *cursor;
+            }
+            else 
+            {
+                return *_cache.insert({source, _baseConverter(source)})
+            }
+        }
     };
 }
