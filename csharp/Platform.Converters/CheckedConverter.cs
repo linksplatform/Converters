@@ -26,17 +26,6 @@ namespace Platform.Converters
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get;
         } = CompileCheckedConverter();
-
-        /// <summary>
-        /// <para>
-        /// Compiles the checked converter.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>A checked converter of t source and t target</para>
-        /// <para></para>
-        /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static CheckedConverter<TSource, TTarget> CompileCheckedConverter()
         {
