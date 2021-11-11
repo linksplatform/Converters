@@ -26,7 +26,18 @@ namespace Platform.Converters
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get;
         } = CompileUncheckedConverter();
-[MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        /// <summary>
+        /// <para>
+        /// Compiles the unchecked converter.
+        /// </para>
+        /// <para></para>
+        /// </summary>
+        /// <returns>
+        /// <para>An unchecked sign extending converter of t source and t target</para>
+        /// <para></para>
+        /// </returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static UncheckedSignExtendingConverter<TSource, TTarget> CompileUncheckedConverter()
         {
             var type = CreateTypeInheritedFrom<UncheckedSignExtendingConverter<TSource, TTarget>>();
