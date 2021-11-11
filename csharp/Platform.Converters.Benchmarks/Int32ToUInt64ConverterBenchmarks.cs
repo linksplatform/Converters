@@ -17,26 +17,8 @@ namespace Platform.Converters.Benchmarks
     [MemoryDiagnoser]
     public class Int32ToUInt64ConverterBenchmarks
     {
-        /// <summary>
-        /// <para>
-        /// The int 32 to int 64converter.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private static UncheckedConverter<int, ulong> _int32ToUInt64converter;
-        /// <summary>
-        /// <para>
-        /// The object to int 64 converter.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private static UncheckedConverter<object, ulong> _objectToUInt64Converter;
-        /// <summary>
-        /// <para>
-        /// The format provider.
-        /// </para>
-        /// <para></para>
-        /// </summary>
         private static IFormatProvider _formatProvider;
 
         /// <summary>

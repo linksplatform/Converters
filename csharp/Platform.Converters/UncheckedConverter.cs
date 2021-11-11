@@ -26,18 +26,7 @@ namespace Platform.Converters
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get;
         } = CompileUncheckedConverter();
-
-        /// <summary>
-        /// <para>
-        /// Compiles the unchecked converter.
-        /// </para>
-        /// <para></para>
-        /// </summary>
-        /// <returns>
-        /// <para>An unchecked converter of t source and t target</para>
-        /// <para></para>
-        /// </returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+[MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static UncheckedConverter<TSource, TTarget> CompileUncheckedConverter()
         {
             var type = CreateTypeInheritedFrom<UncheckedConverter<TSource, TTarget>>();
