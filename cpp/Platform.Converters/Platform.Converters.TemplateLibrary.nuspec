@@ -20,12 +20,4 @@
       <group targetFramework="native"></group>
     </dependencies>
   </metadata>
-  <files>
-    <file src="icon.png" target="images/icon.png" />
-    <file src="Platform.Converters.h" target="lib\native\include\Platform.Converters.h" />
-    <file src="Convert.h" target="lib\native\include\Convert.h" />
-    <file src="Converter.h" target="lib\native\include\Converter.h" />
-    <file src="StringConverter.h" target="lib\native\include\StringConverter.h" />
-    <file src="To.h" target="lib\native\include\To.h" />
-  </files>
 </package>
