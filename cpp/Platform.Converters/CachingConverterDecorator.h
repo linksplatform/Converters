@@ -7,25 +7,23 @@
 namespace Platform::Converters
 {
     template <typename ...> class Cached;
-    template <typename TSource, typename TTarget> class Cached<TSource, TTarget>
+    template <typename Function> class Cached<Function>
     {
-        private: std::unique_ptr<std::function<TTarget(TSource)>> _baseConverter;
-        private: std::unordered_map<TSource, TTarget> _cache;
+        private: Function _baseConverter;
 
-        public: Cached(std::function<TTarget(TSource)>& baseConverter, std::unordered_map<TSource, TTarget>& cache): _baseConverter(baseConverter), _cache(cache) {}
+        public: Cached(Function baseConverter): _baseConverter(baseConverter) {}
 
-        public: Cached(std::function<TTarget(TSource)>& baseConverter): _baseConverter(baseConverter), _cache() {}
-
-        public: TTarget operator()(const TSource& source)
+        public: auto operator()(auto&& source)
         {
-            auto cursor = _cache.find(source);
-            if (cursor != _cache.end())
+            static std::unordered_map<std::decay_t<decltype(source)>> cached;
+            auto cursor = cached.find(source);
+            if (cursor != cached.end())
             {
                 return *cursor;
             }
             else 
             {
-                return *_cache.insert({source, _baseConverter(source)})
+                return *cached.insert({source, _baseConverter(source)})
             }
         }
     };
