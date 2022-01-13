@@ -8,11 +8,11 @@ namespace Platform::Converters
 {
     template <typename TSource, typename TTarget, typename TCache = std::unordered_map<TSource, TTarget>> class Cached
     {
-    private: std::function<TTarget(TSource) > _baseConverter;
+    private: std::function<TTarget(TSource)>& _cachedFunction;
 
-    private: std::unordered_map<TSource, TTarget> _cache;
+    private: TCache& _cache;
 
-    public: Cached(std::function<TTarget(TSource)>& baseConverter, std::unordered_map<TSource, TTarget>& cache) : _baseConverter(baseConverter), _cache(cache) {};
+    public: Cached(std::function<TTarget(TSource)>& cachedFunction, std::unordered_map<TSource, TTarget>& cache) : _cachedFunction(cachedFunction), _cache(cache) {};
 
     public: TTarget operator()(TSource&& source)
     {
