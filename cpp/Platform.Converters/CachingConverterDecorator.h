@@ -44,14 +44,14 @@ namespace Platform::Converters
             return CachedCall(_cache, _cachedFunction, source);
         }
 
-        TTarget&& operator()(TSource&& source) &&
+       TTarget operator()(TSource&& source) &&
         {
-            return std::move(CachedCall(_cache, _cachedFunction, std::move(source)));
+            return _cachedFunction(std::move(source));
         }
-
-        TTarget&& operator()(const TSource& source) &&
+        
+        TTarget operator()(const TSource& source) &&
         {
-            return std::move(CachedCall(_cache, _cachedFunction, source));
+            return _cachedFunction(source);
         }
     };
 }
