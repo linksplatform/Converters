@@ -1,41 +1,57 @@
-#pragma once
+#include <iomanip>
+#include <string>
 
 #include <functional>
 #include <memory>
 #include <unordered_map>
 
+
 namespace Platform::Converters
 {
-    template <typename TSource, typename TTarget, typename TCache = std::unordered_map<TSource, TTarget>> class Cached
-    {
-    private: std::function<TTarget(TSource)>& _cachedFunction;
-
-    private: TCache& _cache;
-
-    public: Cached(std::function<TTarget(TSource)>& cachedFunction, std::unordered_map<TSource, TTarget>& cache) : _cachedFunction(cachedFunction), _cache(cache) {};
-
-    public: TTarget operator()(TSource&& source)
-    {
-        if (auto cursor = _cache.find(source); cursor != _cache.end())
+    template<typename TCache, typename TConverter, typename TSource>
+    auto CachedCall(TCache& cache, TConverter&& converter, TSource&& source) 
+            -> std::add_lvalue_reference_t<std::decay_t<std::invoke_result_t<TConverter, TSource>>> {
+        if (auto cursor = cache.find(source); cursor != cache.end())
         {
             return cursor->second;
         }
         else
         {
-            return *_cache.insert({ source, _baseConverter(source) });
+            auto target = std::forward<TConverter>(converter)(source);
+            return cache.insert({ std::forward<TSource>(source), std::move(target) }).first->second;
         }
     }
 
-    public: TTarget operator()(const TSource& source)
+    template <typename TSource, typename TTarget, typename TCache = std::unordered_map<TSource, TTarget>> 
+    class Cached
     {
-        if (auto cursor = _cache.find(source); cursor != _cache.end())
+        std::function<TTarget(TSource)> _cachedFunction;
+        TCache _cache;
+    public:
+        Cached(std::function<TTarget(TSource)> cachedFunction) 
+            : _cachedFunction(std::move(cachedFunction)) {};
+
+        Cached(std::function<TTarget(TSource)> cachedFunction, TCache cache) 
+            : _cachedFunction(std::move(cachedFunction)), _cache(std::move(cache)) {};
+
+        const TTarget& operator()(TSource&& source) &
         {
-            return cursor->second;
+            return CachedCall(_cache, _cachedFunction, std::move(source));
         }
-        else
+
+        const TTarget& operator()(const TSource& source) &
         {
-            return *_cache.insert({ source, _baseConverter(source) });
+            return CachedCall(_cache, _cachedFunction, source);
         }
-    }
+
+        TTarget&& operator()(TSource&& source) &&
+        {
+            return std::move(CachedCall(_cache, _cachedFunction, std::move(source)));
+        }
+
+        TTarget&& operator()(const TSource& source) &&
+        {
+            return std::move(CachedCall(_cache, _cachedFunction, source));
+        }
     };
 }
