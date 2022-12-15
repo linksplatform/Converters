@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Converters.Benchma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Converters.Tests", "Platform.Converters.Tests\Platform.Converters.Tests.csproj", "{D9A398D8-0BDD-4364-9688-E13DE1A3455A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Platform.Converters.TemplateLibrary.Tests", "cpp\Platform.Converters.Tests\Platform.Converters.TemplateLibrary.Tests.vcxproj", "{6D55A610-F423-40C6-857D-45FE202674FB}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,16 +55,6 @@ Global
 		{D9A398D8-0BDD-4364-9688-E13DE1A3455A}.Release|x64.Build.0 = Release|Any CPU
 		{D9A398D8-0BDD-4364-9688-E13DE1A3455A}.Release|x86.ActiveCfg = Release|Any CPU
 		{D9A398D8-0BDD-4364-9688-E13DE1A3455A}.Release|x86.Build.0 = Release|Any CPU
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|x64.ActiveCfg = Debug|x64
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|x64.Build.0 = Debug|x64
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|x86.ActiveCfg = Debug|Win32
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|x86.Build.0 = Debug|Win32
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Release|Any CPU.ActiveCfg = Release|Win32
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Release|x64.ActiveCfg = Release|x64
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Release|x64.Build.0 = Release|x64
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Release|x86.ActiveCfg = Release|Win32
-		{6D55A610-F423-40C6-857D-45FE202674FB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
