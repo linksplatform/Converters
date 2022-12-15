@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Converters.Benchma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Platform.Converters.Tests", "Platform.Converters.Tests\Platform.Converters.Tests.csproj", "{D9A398D8-0BDD-4364-9688-E13DE1A3455A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Platform.Converters.TemplateLibrary", "cpp\Platform.Converters\Platform.Converters.TemplateLibrary.vcxproj", "{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Platform.Converters.TemplateLibrary.Tests", "cpp\Platform.Converters.Tests\Platform.Converters.TemplateLibrary.Tests.vcxproj", "{6D55A610-F423-40C6-857D-45FE202674FB}"
 EndProject
 Global
@@ -59,16 +57,6 @@ Global
 		{D9A398D8-0BDD-4364-9688-E13DE1A3455A}.Release|x64.Build.0 = Release|Any CPU
 		{D9A398D8-0BDD-4364-9688-E13DE1A3455A}.Release|x86.ActiveCfg = Release|Any CPU
 		{D9A398D8-0BDD-4364-9688-E13DE1A3455A}.Release|x86.Build.0 = Release|Any CPU
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Debug|Any CPU.ActiveCfg = Debug|Win32
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Debug|x64.ActiveCfg = Debug|x64
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Debug|x64.Build.0 = Debug|x64
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Debug|x86.ActiveCfg = Debug|Win32
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Debug|x86.Build.0 = Debug|Win32
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Release|Any CPU.ActiveCfg = Release|Win32
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Release|x64.ActiveCfg = Release|x64
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Release|x64.Build.0 = Release|x64
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Release|x86.ActiveCfg = Release|Win32
-		{B6BC4F76-13CF-4348-BBF7-05E25EC4BFE5}.Release|x86.Build.0 = Release|Win32
 		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|Any CPU.ActiveCfg = Debug|Win32
 		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|x64.ActiveCfg = Debug|x64
 		{6D55A610-F423-40C6-857D-45FE202674FB}.Debug|x64.Build.0 = Debug|x64
