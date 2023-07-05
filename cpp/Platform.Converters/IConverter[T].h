@@ -1,8 +1,2 @@
-﻿namespace Platform::Converters
-{
-    template <typename ...> class IConverter;
-    template <typename T> class IConverter<T> : public IConverter<T, T>
-    {
-    public:
-    };
-}
+// Для этого файла не требуется перевод на C++.
+// No translation to C++ is needed for that file.

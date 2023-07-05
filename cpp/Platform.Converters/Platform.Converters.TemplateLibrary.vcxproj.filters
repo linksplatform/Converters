@@ -27,11 +27,37 @@
     <ClInclude Include="StringConverter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="is_detected.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="To.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CachingConverterDecorator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckedConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ConverterBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IConverter[TSource, TTarget].h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UncheckedConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UncheckedSignExtendingConverter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Platform.Converters.Benchmarks\Int32ToUInt64ConverterBenchmarks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Platform.Converters.Benchmarks\Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Platform.Converters.Benchmarks\UInt64ToUInt64ConverterBenchmarks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

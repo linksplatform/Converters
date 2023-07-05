@@ -1,15 +1,52 @@
-﻿namespace Platform::Converters
+#include <iomanip>
+#include <string>
+
+#include <functional>
+#include <memory>
+#include <unordered_map>
+
+
+namespace Platform::Converters
 {
-    template <typename ...> class CachingConverterDecorator;
-    template <typename TSource, typename TTarget> class CachingConverterDecorator<TSource, TTarget> : public IConverter<TSource, TTarget>
+    template<typename TCache, typename TConverter, typename TSource>
+    auto CachedCall(TCache& cache, TConverter&& converter, TSource&& source) 
+            -> std::add_lvalue_reference_t<std::decay_t<std::invoke_result_t<TConverter, TSource>>> {
+        if (auto cursor = cache.find(source); cursor != cache.end())
+        {
+            return cursor->second;
+        }
+        else
+        {
+            auto target = std::forward<TConverter>(converter)(source);
+            return cache.insert({ std::forward<TSource>(source), std::move(target) }).first->second;
+        }
+    }
+
+    template <typename TSource, typename TTarget, typename TCache = std::unordered_map<TSource, TTarget>> 
+    class Cached
     {
-        private: readonly IConverter<TSource, TTarget> *_baseConverter;
-        private: readonly IDictionary<TSource, TTarget> *_cache;
+        std::function<TTarget(TSource)> _cachedFunction;
+        TCache _cache;
+    public:
+        Cached(std::function<TTarget(TSource)> cachedFunction) 
+            : _cachedFunction(std::move(cachedFunction)) {};
 
-        public: CachingConverterDecorator(IConverter<TSource, TTarget> &baseConverter, IDictionary<TSource, TTarget> &cache) { (_baseConverter, _cache) = (baseConverter, cache); }
+        Cached(std::function<TTarget(TSource)> cachedFunction, TCache cache) 
+            : _cachedFunction(std::move(cachedFunction)), _cache(std::move(cache)) {};
 
-        public: CachingConverterDecorator(IConverter<TSource, TTarget> &baseConverter) : this(baseConverter, Dictionary<TSource, TTarget>()) { }
+        const TTarget& operator()(TSource&& source) &
+        {
+            return CachedCall(_cache, _cachedFunction, std::move(source));
+        }
 
-        public: TTarget Convert(TSource source) { return _cache.GetOrAdd(source, _baseConverter.Convert); }
+        const TTarget& operator()(const TSource& source) &
+        {
+            return CachedCall(_cache, _cachedFunction, source);
+        }
+
+        TTarget operator()(TSource source) &&
+        {
+            return _cachedFunction(std::move(source));
+        }
     };
 }
