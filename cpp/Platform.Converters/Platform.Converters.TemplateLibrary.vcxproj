@@ -99,6 +99,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,12 +139,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CachingConverterDecorator.h" />
+    <ClInclude Include="CheckedConverter.h" />
     <ClInclude Include="Convert.h" />
     <ClInclude Include="Converter.h" />
+    <ClInclude Include="ConverterBase.h" />
+    <ClInclude Include="IConverter[TSource, TTarget].h" />
     <ClInclude Include="To.h" />
-    <ClInclude Include="is_detected.h" />
     <ClInclude Include="Platform.Converters.h" />
     <ClInclude Include="StringConverter.h" />
+    <ClInclude Include="UncheckedConverter.h" />
+    <ClInclude Include="UncheckedSignExtendingConverter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Platform.Converters.Benchmarks\Int32ToUInt64ConverterBenchmarks.cpp" />
+    <ClCompile Include="..\Platform.Converters.Benchmarks\Program.cpp" />
+    <ClCompile Include="..\Platform.Converters.Benchmarks\UInt64ToUInt64ConverterBenchmarks.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
