@@ -6,7 +6,7 @@
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
     <VersionPrefix>0.4.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
-    <TargetFramework>net7</TargetFramework>
+    <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Converters</AssemblyName>
     <PackageId>Platform.Converters</PackageId>
     <PackageTags>LinksPlatform;Converters;CachingConverterDecorator;CheckedConverter;ConverterBase;IConverter;UncheckedConverter;UncheckedSignExtendingConverter</PackageTags>
@@ -23,9 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Target frameworks are changed to net7.
-License is changed to Unlicense.
-Platform.Reflection dependency is updated from 0.6.1 to 0.7.0.</PackageReleaseNotes>
+    <PackageReleaseNotes>Target framework is updated to net8.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
