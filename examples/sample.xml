@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <name>Platform Converters</name>
+  <version>1.0.0</version>
+  <features>
+    <item_0>Plugin System</item_0>
+    <item_1>CLI Tool</item_1>
+    <item_2>File Conversion</item_2>
+  </features>
+  <active>true</active>
+  <count>42</count>
+</root>

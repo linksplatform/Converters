@@ -1,0 +1,13 @@
+{
+  "name": "Platform Converters",
+  "version": "1.0.0",
+  "features": {
+    "item_0": "Plugin System",
+    "item_1": "CLI Tool",
+    "item_2": "File Conversion",
+    "#text": "Plugin SystemCLI ToolFile Conversion"
+  },
+  "active": true,
+  "count": 42,
+  "#text": "Platform Converters1.0.0Plugin SystemCLI ToolFile Conversiontrue42"
+}

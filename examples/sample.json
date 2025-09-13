@@ -1,0 +1,11 @@
+{
+  "name": "Platform Converters",
+  "version": "1.0.0",
+  "features": [
+    "Plugin System",
+    "CLI Tool",
+    "File Conversion"
+  ],
+  "active": true,
+  "count": 42
+}
