@@ -1,0 +1,2 @@
+/tmp/gh-issue-solver-1757802488120/cpp/CMakeFiles/edit_cache.dir
+/tmp/gh-issue-solver-1757802488120/cpp/CMakeFiles/rebuild_cache.dir
