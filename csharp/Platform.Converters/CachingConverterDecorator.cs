@@ -64,5 +64,13 @@ namespace Platform.Converters
         /// </returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public TTarget Convert(TSource source) => _cache.GetOrAdd(source, _baseConverter.Convert);
+
+        /// <summary>
+        /// <para>Returns a string that represents the current caching converter decorator.</para>
+        /// <para>Возвращает строку, представляющую текущий декоратор кэширующего конвертера.</para>
+        /// </summary>
+        /// <returns><para>A string that represents the current caching converter decorator.</para><para>Строка, представляющая текущий декоратор кэширующего конвертера.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public override string ToString() => $"{GetType().Name}<{typeof(TSource).Name}, {typeof(TTarget).Name}>({_baseConverter})";
     }
 }

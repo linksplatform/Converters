@@ -26,6 +26,14 @@ namespace Platform.Converters
         public abstract TTarget Convert(TSource source);
         
         /// <summary>
+        /// <para>Returns a string that represents the current converter.</para>
+        /// <para>Возвращает строку, представляющую текущий конвертер.</para>
+        /// </summary>
+        /// <returns><para>A string that represents the current converter.</para><para>Строка, представляющая текущий конвертер.</para></returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public override string ToString() => $"{GetType().BaseType?.Name ?? GetType().Name}<{typeof(TSource).Name}, {typeof(TTarget).Name}>";
+        
+        /// <summary>
         /// <para>Generates a sequence of instructions using <see cref="ILGenerator"/> that converts a value of type <see cref="System.Object"/> to a value of type <typeparamref name="TTarget"/>.</para>
         /// <para>Генерирует последовательность инструкций при помощи <see cref="ILGenerator"/> выполняющую преобразование значения типа <see cref="System.Object"/> к значению типа <typeparamref name="TTarget"/>.</para>
         /// </summary>

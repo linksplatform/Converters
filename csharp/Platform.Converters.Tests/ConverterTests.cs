@@ -52,5 +52,31 @@ namespace Platform.Converters.Tests
             TestObjectConversion(true);
         }
         private static void TestObjectConversion<T>(T value) => Assert.Equal(value, UncheckedConverter<object, T>.Default.Convert(value));
+
+        [Fact]
+        public static void ToStringTest()
+        {
+            var uncheckedConverter = UncheckedConverter<int, ulong>.Default;
+            var checkedConverter = CheckedConverter<int, ulong>.Default;
+            var signExtendingConverter = UncheckedSignExtendingConverter<byte, long>.Default;
+            var cachingDecorator = new CachingConverterDecorator<int, ulong>(uncheckedConverter);
+            
+            Assert.Contains("UncheckedConverter", uncheckedConverter.ToString());
+            Assert.Contains("Int32", uncheckedConverter.ToString());
+            Assert.Contains("UInt64", uncheckedConverter.ToString());
+            
+            Assert.Contains("CheckedConverter", checkedConverter.ToString());
+            Assert.Contains("Int32", checkedConverter.ToString());
+            Assert.Contains("UInt64", checkedConverter.ToString());
+            
+            Assert.Contains("UncheckedSignExtendingConverter", signExtendingConverter.ToString());
+            Assert.Contains("Byte", signExtendingConverter.ToString());
+            Assert.Contains("Int64", signExtendingConverter.ToString());
+            
+            Assert.Contains("CachingConverterDecorator", cachingDecorator.ToString());
+            Assert.Contains("Int32", cachingDecorator.ToString());
+            Assert.Contains("UInt64", cachingDecorator.ToString());
+            Assert.Contains("UncheckedConverter", cachingDecorator.ToString());
+        }
     }
 }
