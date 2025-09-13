@@ -56,4 +56,86 @@ namespace Platform::Converters::Tests
 	    ASSERT_EQ(std::string("A"), To<std::string>(aReference));
 	    ASSERT_EQ(std::string("void pointer <0xa>"), To<std::string>((void *)10));
 	};
+
+	TEST(StringConverterTests, U8StringToStringConversion)
+	{
+	    std::u8string u8str = u8"Hello World";
+	    std::string result = To<std::string>(u8str);
+	    ASSERT_EQ(std::string("Hello World"), result);
+	    
+	    // Test UTF-8 characters
+	    std::u8string u8utf = u8"Привет мир";
+	    std::string resultUtf = To<std::string>(u8utf);
+	    ASSERT_EQ(std::string("Привет мир"), resultUtf);
+	};
+
+	TEST(StringConverterTests, StringToU8StringConversion)
+	{
+	    std::string str = "Hello World";
+	    std::u8string result = To<std::u8string>(str);
+	    ASSERT_EQ(u8"Hello World", result);
+	    
+	    // Test UTF-8 characters
+	    std::string strUtf = "Привет мир";
+	    std::u8string resultUtf = To<std::u8string>(strUtf);
+	    ASSERT_EQ(u8"Привет мир", resultUtf);
+	};
+
+	TEST(StringConverterTests, U16StringToU8StringConversion)
+	{
+	    std::u16string u16str = u"Hello World";
+	    std::u8string result = To<std::u8string>(u16str);
+	    ASSERT_EQ(u8"Hello World", result);
+	    
+	    // Test Unicode characters
+	    std::u16string u16unicode = u"Héllo Wörld";
+	    std::u8string resultUnicode = To<std::u8string>(u16unicode);
+	    ASSERT_EQ(u8"Héllo Wörld", resultUnicode);
+	};
+
+	TEST(StringConverterTests, U32StringToU8StringConversion)
+	{
+	    std::u32string u32str = U"Hello World";
+	    std::u8string result = To<std::u8string>(u32str);
+	    ASSERT_EQ(u8"Hello World", result);
+	    
+	    // Test Unicode characters
+	    std::u32string u32unicode = U"Héllo Wörld";
+	    std::u8string resultUnicode = To<std::u8string>(u32unicode);
+	    ASSERT_EQ(u8"Héllo Wörld", resultUnicode);
+	    
+	    // Test emoji (4-byte UTF-8)
+	    std::u32string u32emoji = U"Hello 🌍";
+	    std::u8string resultEmoji = To<std::u8string>(u32emoji);
+	    ASSERT_EQ(u8"Hello 🌍", resultEmoji);
+	};
+
+	TEST(StringConverterTests, U16StringToStringConversion)
+	{
+	    std::u16string u16str = u"Hello World";
+	    std::string result = To<std::string>(u16str);
+	    ASSERT_EQ(std::string("Hello World"), result);
+	    
+	    // Test Unicode characters
+	    std::u16string u16unicode = u"Héllo Wörld";
+	    std::string resultUnicode = To<std::string>(u16unicode);
+	    ASSERT_EQ(std::string("Héllo Wörld"), resultUnicode);
+	};
+
+	TEST(StringConverterTests, U32StringToStringConversion)
+	{
+	    std::u32string u32str = U"Hello World";
+	    std::string result = To<std::string>(u32str);
+	    ASSERT_EQ(std::string("Hello World"), result);
+	    
+	    // Test Unicode characters
+	    std::u32string u32unicode = U"Héllo Wörld";
+	    std::string resultUnicode = To<std::string>(u32unicode);
+	    ASSERT_EQ(std::string("Héllo Wörld"), resultUnicode);
+	    
+	    // Test emoji (4-byte UTF-8)
+	    std::u32string u32emoji = U"Hello 🌍";
+	    std::string resultEmoji = To<std::string>(u32emoji);
+	    ASSERT_EQ(std::string("Hello 🌍"), resultEmoji);
+	};
 }
