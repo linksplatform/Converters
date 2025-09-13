@@ -12,7 +12,7 @@ namespace Platform.Converters
         /// <para>Converts the value of the <typeparamref name="TSource"/> type to the value of the <typeparamref name="TTarget"/> type.</para>
         /// <para>Конвертирует значение типа <typeparamref name="TSource"/> в значение типа <typeparamref name="TTarget"/>.</para>
         /// </summary>
-        /// <param name="source"><para>The <typeparamref name=="TSource"/> type value.</para><para>Значение типа <typeparamref name="TSource"/>.</para></param>
+        /// <param name="source"><para>The <typeparamref name="TSource"/> type value.</para><para>Значение типа <typeparamref name="TSource"/>.</para></param>
         /// <returns><para>The converted value of the <typeparamref name="TTarget"/> type.</para><para>Значение конвертированное в тип <typeparamref name="TTarget"/>.</para></returns>
         TTarget Convert(TSource source);
     }

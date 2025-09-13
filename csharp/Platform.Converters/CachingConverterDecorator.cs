@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Platform.Collections;
 
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 namespace Platform.Converters
 {
@@ -20,7 +19,7 @@ namespace Platform.Converters
 
         /// <summary>
         /// <para>
-        /// Initializes a new <see cref="CachingConverterDecorator"/> instance.
+        /// Initializes a new <see cref="CachingConverterDecorator{TSource, TTarget}"/> instance.
         /// </para>
         /// <para></para>
         /// </summary>
@@ -37,7 +36,7 @@ namespace Platform.Converters
 
         /// <summary>
         /// <para>
-        /// Initializes a new <see cref="CachingConverterDecorator"/> instance.
+        /// Initializes a new <see cref="CachingConverterDecorator{TSource, TTarget}"/> instance.
         /// </para>
         /// <para></para>
         /// </summary>
