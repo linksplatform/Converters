@@ -4,7 +4,7 @@
     <Description>LinksPlatform's Platform.Converters Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
-    <VersionPrefix>0.4.0</VersionPrefix>
+    <VersionPrefix>0.5.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Converters</AssemblyName>
@@ -23,7 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Update target framework from net7 to net8.</PackageReleaseNotes>
+    <PackageReleaseNotes>Add CLI tool with plugin system for file conversions. Implement IFileConverter interface for DLL plugins.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
