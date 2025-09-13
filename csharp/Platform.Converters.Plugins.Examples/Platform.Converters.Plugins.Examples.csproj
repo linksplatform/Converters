@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8</TargetFramework>
+    <AssemblyName>Platform.Converters.Plugins.Examples</AssemblyName>
+    <PackageId>Platform.Converters.Plugins.Examples</PackageId>
+    <Description>Example file converter plugins</Description>
+    <Copyright>Konstantin Diachenko</Copyright>
+    <Authors>Konstantin Diachenko</Authors>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Platform.Converters/Platform.Converters.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8</TargetFramework>
+    <AssemblyName>Platform.Converters.CLI</AssemblyName>
+    <PackageId>Platform.Converters.CLI</PackageId>
+    <Description>CLI tool for file conversion with plugin support</Description>
+    <Copyright>Konstantin Diachenko</Copyright>
+    <Authors>Konstantin Diachenko</Authors>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Platform.Converters/Platform.Converters.csproj" />
+  </ItemGroup>
+
+
+</Project>
