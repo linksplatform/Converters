@@ -4,12 +4,12 @@
     <Description>LinksPlatform's Platform.Converters Class Library</Description>
     <Copyright>Konstantin Diachenko</Copyright>
     <AssemblyTitle>Platform.Converters</AssemblyTitle>
-    <VersionPrefix>0.4.0</VersionPrefix>
+    <VersionPrefix>0.5.0</VersionPrefix>
     <Authors>Konstantin Diachenko</Authors>
     <TargetFramework>net8</TargetFramework>
     <AssemblyName>Platform.Converters</AssemblyName>
     <PackageId>Platform.Converters</PackageId>
-    <PackageTags>LinksPlatform;Converters;CachingConverterDecorator;CheckedConverter;ConverterBase;IConverter;UncheckedConverter;UncheckedSignExtendingConverter</PackageTags>
+    <PackageTags>LinksPlatform;Converters;CachingConverterDecorator;CheckedConverter;ConverterBase;IConverter;UncheckedConverter;UncheckedSignExtendingConverter;ConfigurableConverter</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/linksplatform/Documentation/18469f4d033ee9a5b7b84caab9c585acab2ac519/doc/Avatar-rainbow-icon-64x64.png</PackageIconUrl>
     <PackageProjectUrl>https://linksplatform.github.io/Converters</PackageProjectUrl>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
@@ -23,7 +23,7 @@
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <LangVersion>latest</LangVersion>
-    <PackageReleaseNotes>Update target framework from net7 to net8.</PackageReleaseNotes>
+    <PackageReleaseNotes>Add ConfigurableConverter with multiple conflict resolution strategies for handling conversion overflows.</PackageReleaseNotes>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
