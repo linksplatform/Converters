@@ -132,4 +132,6 @@ jobs:
         wget "$SCRIPTS_BASE_URL/filter.yml"
         wget "$SCRIPTS_BASE_URL/toc.yml"
         wget "$SCRIPTS_BASE_URL/publish-csharp-docs.sh"
+        # Copy language selection index page to root
+        cp ../index.html ./index.html
         bash ./publish-csharp-docs.sh
