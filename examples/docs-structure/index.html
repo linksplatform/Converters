@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform.Converters Documentation - Language Selection</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+        }
+        
+        .language-options {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+        
+        .language-card {
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 30px 40px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .language-card:hover {
+            border-color: #667eea;
+            background: #667eea;
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .language-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .language-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .language-description {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Platform.Converters</h1>
+        <p class="subtitle">Choose your preferred documentation language</p>
+        
+        <div class="language-options">
+            <a href="csharp/" class="language-card">
+                <div class="language-icon">🎯</div>
+                <div class="language-name">C#</div>
+                <div class="language-description">
+                    .NET implementation with NuGet package
+                </div>
+            </a>
+            
+            <a href="cpp/" class="language-card">
+                <div class="language-icon">⚡</div>
+                <div class="language-name">C++</div>
+                <div class="language-description">
+                    Header-only template library
+                </div>
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>LinksPlatform's Platform.Converters Class Library</p>
+            <p>
+                <a href="https://github.com/linksplatform/Converters">View on GitHub</a> |
+                <a href="https://www.nuget.org/packages/Platform.Converters">NuGet Package</a> |
+                <a href="https://conan.io/center/platform.converters">Conan Package</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
